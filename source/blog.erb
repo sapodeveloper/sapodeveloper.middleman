@@ -40,12 +40,12 @@
         <div class="uk-width-7-10">
           <div id="main" role="main">
             <div class="uk-panel uk-panel-box uk-panel-header">
-              <h2 class="uk-panel-title"><%= current_article.title %></h2>
-              <p><%= current_article.body %></p>
+              <h2 class="uk-panel-title"><%= current_page.data.title %></h2>
+              <p><%= current_page.data %></p>
               <hr>
-              Posted by <%= current_article.data.auther %><br />
-              Created at <%= current_article.data.date %><br />
-              Tags <%= current_article.data.tags %>
+              Posted by <%= current_page.data.auther %><br />
+              Created at <%= current_page.data.date %><br />
+              Tags <%= current_page.data.tags %>
             </div>
           </div>
         </div>
