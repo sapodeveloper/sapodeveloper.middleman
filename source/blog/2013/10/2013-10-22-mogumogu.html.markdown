@@ -1,0 +1,6 @@
+---
+auther: 
+title: "mogumogu"
+date: 2013-10-22 15:20
+tags: 
+---
