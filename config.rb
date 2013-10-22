@@ -8,12 +8,12 @@ activate :blog do |blog|
   blog.prefix = "blog/:year/:month"
   blog.permalink = ":title"
   # blog.sources = ":year-:month-:day-:title.html"
-  # blog.taglink = "tags/:tag.html"
+  blog.taglink = "tags/:tag.html"
   blog.layout = "blog"
   blog.summary_separator = /(READMORE)/
   blog.summary_length = 25
-  # blog.year_link = ":year.html"
-  # blog.month_link = ":year/:month.html"
+  blog.year_link = ":year.html"
+  blog.month_link = ":year/:month.html"
   # blog.day_link = ":year/:month/:day.html"
   # blog.default_extension = ".markdown"
 
