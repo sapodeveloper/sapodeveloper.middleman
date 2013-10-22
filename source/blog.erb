@@ -39,7 +39,14 @@
       <div class="uk-grid">
         <div class="uk-width-7-10">
           <div id="main" role="main">
-            <%= yield %>
+            <div class="uk-panel uk-panel-box uk-panel-header">
+              <h2 class="uk-panel-title"><%= current_article.title %></h2>
+              <p><%= current_article.body %></p>
+              <hr>
+              Posted by <%= current_article.data.auther %><br />
+              Created at <%= current_article.data.date %><br />
+              Tags <%= current_article.data.tags %>
+            </div>
           </div>
         </div>
         <div class="uk-width-3-10">

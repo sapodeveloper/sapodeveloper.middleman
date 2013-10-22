@@ -9,9 +9,9 @@ activate :blog do |blog|
   blog.permalink = ":title"
   # blog.sources = ":year-:month-:day-:title.html"
   # blog.taglink = "tags/:tag.html"
-  # blog.layout = "layout"
-  # blog.summary_separator = /(READMORE)/
-  # blog.summary_length = 250
+  blog.layout = "blog"
+  blog.summary_separator = /(READMORE)/
+  blog.summary_length = 25
   # blog.year_link = ":year.html"
   # blog.month_link = ":year/:month.html"
   # blog.day_link = ":year/:month/:day.html"
@@ -76,9 +76,9 @@ page "/feed.xml", :layout => false
 #   end
 # end
 
-set :css_dir, 'stylesheets'
+set :css_dir, 'css'
 
-set :js_dir, 'javascripts'
+set :js_dir, 'js'
 
 set :images_dir, 'images'
 

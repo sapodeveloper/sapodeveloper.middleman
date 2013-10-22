@@ -1,5 +1,10 @@
 ---
 title: "test"
 date: 2013-10-22 13:00
-tags: 
+tags: test, hoge, mogu
+auther: moriC
 ---
+
+hogehogemogumogugorogorotomotomonanohananoha  
+mogumogugorogoro  
+gorogoro
