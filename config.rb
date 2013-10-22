@@ -2,11 +2,11 @@
 # Blog settings
 ###
 
-# Time.zone = "UTC"
+Time.zone = "Tokyo"
 
 activate :blog do |blog|
-  # blog.prefix = "blog"
-  # blog.permalink = ":year/:month/:day/:title.html"
+  blog.prefix = "blog/:year/:month"
+  blog.permalink = ":title"
   # blog.sources = ":year-:month-:day-:title.html"
   # blog.taglink = "tags/:tag.html"
   # blog.layout = "layout"
