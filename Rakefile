@@ -16,6 +16,7 @@ end
 ## sapodeveloper.github.ioにbuildする
 task :deploy do
 	sh 'git push middleman master'
+	sh 'bundle exec middleman build'
 	sh 'bundle exec middleman deploy'
 end
 
