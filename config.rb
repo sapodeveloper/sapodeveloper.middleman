@@ -115,3 +115,6 @@ end
 # live reload
 activate :livereload
 
+# derectory support
+activate :directory_indexes
+
