@@ -5,37 +5,13 @@
     <meta charset="utf-8" />
     <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
     <%= stylesheet_link_tag "uikit.min" %>
+    <%= stylesheet_link_tag "custom" %>
     <%= javascript_include_tag "jquery" %>
     <%= javascript_include_tag "uikit.min" %>
-    <style type="text/css">
-      h2 {
-        font-size: 30px !important;
-      }
-      .uk-container {
-        height: 100% !important;
-      }
-      #main {
-        margin-top: 20px;
-      }
-      #sub_menu {
-        padding-left: 10px;
-        border-left: 1px solid #eee;
-        margin-top: 20px;
-      }
-    </style>
   </head>
   <body>
-    <nav class="uk-navbar">
-      <div class="uk-container uk-container-center">
-        <a href="/" class="uk-navbar-brand">サポセン技術ブログ</a>
-        <ul class="uk-navbar-nav">
-          <li class="uk-active"><a href="">Blog</a></li>
-          <li><a href="">Member</a></li>
-          <li class="uk-parent"><a href="">Tags</a></li>
-        </ul>
-      </div>
-    </nav>
-
+    <%= partial "layouts/header" %>
+    
     <div class="uk-container uk-container-center">
       <div class="uk-grid">
         <div class="uk-width-7-10">
@@ -51,29 +27,10 @@
           </div>
         </div>
         <div class="uk-width-3-10">
-          <div id="sub_menu">
-            <h2>Recent Articles</h2>
-              <ol>
-                <% blog.articles[0...10].each do |article| %>
-                  <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-                <% end %>
-              </ol>
-            <h2>Tags</h2>
-              <ol>
-                <% blog.tags.each do |tag, articles| %>
-                  <li><%= link_to tag, tag_path(tag) %> (<%= articles.size %>)</a></li>
-                <% end %>
-              </ol>
-
-            <h2>By Year</h2>
-              <ol>
-                <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-                  <li><%= link_to year, blog_year_path(year) %> (<%= articles.size %>)</a></li>
-                <% end %>
-              </ol>
-          </div>
+          <%= partial "layouts/side_bar" %>
         </div>
       </div>
     </div>
+    <%= partial "layouts/footer" %>
   </body>
 </html>
