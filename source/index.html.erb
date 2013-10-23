@@ -5,9 +5,10 @@ per_page: 10
 
 <% page_articles.each_with_index do |article, i| %>
   <div class="uk-panel uk-panel-box uk-panel-header">
+    <%= article.date.strftime("%Y年%m月%d日") %>
     <h2 class="uk-panel-title"><%= link_to article.title, article %></h2>
     <%= article.summary %>
-    <%= link_to 'Read more…', article %>
+    <%= link_to '続きを読む...', article %>
   </div>
   <br>
 <% end %>

@@ -54,14 +54,14 @@
             <h2>Tags</h2>
               <ol>
                 <% blog.tags.each do |tag, articles| %>
-                  <li><%= link_to tag, tag_path(tag) %> (<%= articles.size %>)</a></li>
+                  <li><%= link_to tag, tag_path(tag) %> <div class="uk-badge uk-badge-notification"><%= articles.size %></div></li>
                 <% end %>
               </ol>
 
             <h2>By Year</h2>
               <ol>
                 <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-                  <li><%= link_to year, blog_year_path(year) %> (<%= articles.size %>)</a></li>
+                  <li><%= link_to year, blog_year_path(year) %> <div class="uk-badge uk-badge-notification"><%= articles.size %></div></li>
                 <% end %>
               </ol>
           </div>
