@@ -27,7 +27,6 @@ end
 
 page "/feed.xml", :layout => false
 
-
 ### 
 # Compass
 ###
