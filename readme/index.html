@@ -32,13 +32,19 @@
 	<ol>
 		<li>環境を整えます</li>
 		<li>リポジトリからクローンします</li>
-			<code>git clone git@github.com:sapodeveloper/sapodeveloper.github.io.git</code>
+			<code>git clone git@github.com:sapodeveloper/sapodeveloper.middleman.git sapodeveloper.github.io</code>
 		<li>リポジトリの中へカレントディレクトリを変更します</li>
 			<code>cd sapodeveloper.github.io</code>
 		<li>環境設定コマンドを実行します</li>
 			<code>rake setup</code>
 		<li>記事を書きましょう</li>
 	</ol>
+	<strong>注意</strong>
+	<p>
+		クローン元とデプロイ先は違うリポジトリです。<br>
+		middlemanを保存しているのは<code>sapodeveloper.middleman</code>リポジトリ<br>
+		デプロイ時に生成するサイト構成を保存しているのは<code>sapodeveloper.github.io</code>リポジトリ
+	</p>
 </div>
 <br>
 <div class="uk-panel uk-panel-box">
