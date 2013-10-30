@@ -5,22 +5,114 @@
   <id>http://blog.url.com/blog/:year/:month</id>
   <link href="http://blog.url.com/blog/:year/:month"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2013-10-22T04:00:00Z</updated>
+  <updated>2013-10-30T11:20:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
   <entry>
-    <title>test</title>
-    <link rel="alternate" href="http://blog.url.com/blog/2013/10/test/"/>
-    <id>http://blog.url.com/blog/2013/10/test/</id>
-    <published>2013-10-22T04:00:00Z</published>
-    <updated>2013-10-22T15:11:49+09:00</updated>
+    <title>Ruby環境の作り方</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2013/10/how_to_install_ruby_environment/"/>
+    <id>http://blog.url.com/blog/2013/10/how_to_install_ruby_environment/</id>
+    <published>2013-10-30T11:20:00Z</published>
+    <updated>2013-10-30T20:40:20+09:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;hogehogemogumogugorogorotomotomonanohananoha&lt;br /&gt;
-mogumogugorogoro&lt;br /&gt;
-gorogoro&lt;/p&gt;
+    <content type="html">&lt;p&gt;もりしーです。&lt;br /&gt;
+この開発記録は&lt;a href="https://www.ruby-lang.org/ja/"&gt;Ruby&lt;/a&gt;製の&lt;a href="http://middlemanapp.com/"&gt;Middleman&lt;/a&gt;によって作成されています。&lt;br /&gt;
+従ってRubyが無ければ記録を残すことが出来ないので導入方法をまとめておきます。  &lt;/p&gt;
+
+&lt;p&gt;1.必要なパッケージをインストールする&lt;br /&gt;
+&lt;code&gt;
+	$ su - &lt;br /&gt;
+  # apt-get install build-essential bison libreadline6-dev&lt;br /&gt;
+  		curl git-core zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev&lt;br /&gt;
+  		sqlite3 libxml2-dev libxslt1-dev autoconf libncurses5-dev&lt;br /&gt;
+  # exit
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;2.rbenvとruby-buildをgithubからクローンする&lt;br /&gt;
+&lt;code&gt;
+  $ cd&lt;br /&gt;
+  $ git clone git://github.com/sstephenson/rbenv.git .rbenv&lt;br /&gt;
+  $ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build &lt;br /&gt;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;3.rbenvが使えるようにする&lt;br /&gt;
+bashの場合は&lt;code&gt;~/.bashrc&lt;/code&gt;、zshの場合は&lt;code&gt;~/.zshrc&lt;/code&gt;に下記の項目を追記する&lt;br /&gt;
+&lt;code&gt;
+  export PATH="$HOME/.rbenv/bin:$PATH"&lt;br /&gt;
+  eval "$(rbenv init -)"
+&lt;/code&gt;
+追記後に&lt;code&gt;source ~/.bashrc&lt;/code&gt;もしくは&lt;code&gt;source ~/.zshrc&lt;/code&gt;を実行する  &lt;/p&gt;
+
+&lt;p&gt;4.正常にrbenvの導入が出来ていれば、下記のように表示される&lt;br /&gt;
+&lt;code&gt;
+  $rbenv
+  rbenv 0.4.0-52-g1cc7536(ここは導入したバージョンによって変わる)
+	Usage: rbenv &lt;command /&gt; [&lt;args&gt;]&lt;/args&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;div class="lineno"&gt;4&lt;/div&gt;&lt;div class="lineno"&gt;5&lt;/div&gt;&lt;div class="lineno"&gt;6&lt;/div&gt;&lt;div class="lineno"&gt;7&lt;/div&gt;&lt;div class="lineno"&gt;8&lt;/div&gt;&lt;div class="lineno"&gt;9&lt;/div&gt;&lt;div class="lineno"&gt;10&lt;/div&gt;&lt;div class="lineno"&gt;11&lt;/div&gt;&lt;div class="lineno"&gt;12&lt;/div&gt;&lt;div class="lineno"&gt;13&lt;/div&gt;&lt;div class="lineno"&gt;14&lt;/div&gt;&lt;div class="lineno"&gt;15&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;Some useful rbenv commands are:
+   commands    List all available rbenv commands
+   local       Set or show the local application-specific Ruby version
+   global      Set or show the global Ruby version
+   shell       Set or show the shell-specific Ruby version
+   install     Install a Ruby version using the ruby-build plugin
+   uninstall   Uninstall a specific Ruby version
+   rehash      Rehash rbenv shims (run this after installing executables)
+   version     Show the current Ruby version and its origin
+   versions    List all Ruby versions available to rbenv
+   which       Display the full path to an executable
+   whence      List all Ruby versions that contain the given executable
+
+See `rbenv help &amp;lt;command&amp;gt;&amp;#39; for information on a specific command.
+For full documentation, see: https://github.com/sstephenson/rbenv#readme &amp;lt;/code&amp;gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+&lt;p&gt;5.導入可能Rubyのバージョンを調べる&lt;br /&gt;
+&lt;code&gt;
+  $ rbenv install --list
+&lt;/code&gt;
+とすると導入可能なRubyのバージョン一覧が表示される。(大量に有るので一部省略)&lt;br /&gt;
+&lt;code&gt;
+	Available versions:&lt;br /&gt;
+  ~ 省略 ~&lt;br /&gt;
+  1.9.3-p448&lt;br /&gt;
+  1.9.3-preview1&lt;br /&gt;
+  1.9.3-rc1&lt;br /&gt;
+  2.0.0-p195&lt;br /&gt;
+  2.0.0-p247&lt;br /&gt;
+  2.0.0-preview2&lt;br /&gt;
+  2.0.0-rc2&lt;br /&gt;
+  2.1.0-dev&lt;br /&gt;
+  2.1.0-preview1&lt;br /&gt;
+  ~ 省略 ~&lt;br /&gt;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;6.Rubyをインストールする
+特に指定がなければ&lt;code&gt;-rc&lt;/code&gt;や&lt;code&gt;-dev&lt;/code&gt;、&lt;code&gt;-preview&lt;/code&gt;ではない最新の安定板を入れましょう。&lt;br /&gt;
+&lt;code&gt;
+	$ rbenv install 2.0.0-p247
+&lt;/code&gt;
+インストールには少し時間がかかります。&lt;br /&gt;
+ちなみにRaspberry Piでは３時間かかります。  &lt;/p&gt;
+
+&lt;p&gt;7.rbenvでインストールしたRubyを読ませる。&lt;br /&gt;
+&lt;code&gt;
+  $ rbenv rehash&lt;br /&gt;
+  $ rbenv global 2.0.0-p247&lt;br /&gt;
+  $ ruby --version&lt;br /&gt;
+  ruby 2.0.0p247 (2013-06-27 revision 41674) [x86_64-darwin12.4.0]&lt;br /&gt;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;これでRubyのインストール完了です。&lt;br /&gt;
+Rubyに興味が有るなら、こちらのコミュニティをおすすめします。&lt;br /&gt;
+&lt;a href="http://hiroshimarb.github.io/"&gt;広島Ruby勉強会&lt;/a&gt;		&lt;/p&gt;
+
+&lt;p&gt;もしrbenvやruby-buildを更新したい場合は該当ディレクトリに移動し&lt;code&gt;git pull&lt;/code&gt;して&lt;code&gt;source ~/.bashrc&lt;/code&gt;もしくは&lt;code&gt;source ~/.zshrc&lt;/code&gt;を実行すると更新されます。  &lt;/p&gt;
+
+&lt;p&gt;追伸&lt;br /&gt;
+記録を書くときに&lt;code&gt;bundle install&lt;/code&gt;を実行しますが、実行時間を短くする小技としては&lt;br /&gt;
+&lt;code&gt;~/.gemrc&lt;/code&gt;ファイルを作成し、&lt;code&gt;gem: --no-ri --no-rdoc&lt;/code&gt;と書いておくとよいでしょう。  &lt;/p&gt;
 </content>
   </entry>
 </feed>

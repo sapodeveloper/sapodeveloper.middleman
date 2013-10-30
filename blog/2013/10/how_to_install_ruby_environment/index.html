@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Blog サポセン技術ブログ</title>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <link href="/css/uikit.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/css/custom.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="/js/jquery.js" type="text/javascript"></script>
+    <script src="/js/uikit.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <nav class="uk-navbar">
+  <div class="uk-container uk-container-center">
+    <a href="/" class="uk-navbar-brand">サポセン技術ブログ</a>
+    <ul class="uk-navbar-nav">
+      <li><a href="">Blog</a></li>
+      <li><a href="/member">Member</a></li>
+      <li><a href="">Tags</a></li>
+      <li><a href="/readme">Readme</a></li>
+    </ul>
+  </div>
+</nav>
+    
+    <div class="uk-container uk-container-center">
+      <div class="uk-grid">
+        <div class="uk-width-7-10">
+          <div id="main" role="main">
+            <div class="uk-panel uk-panel-box uk-panel-header">
+              <h2 class="uk-panel-title">Ruby環境の作り方</h2>
+              <p><p>もりしーです。<br />
+この開発記録は<a href="https://www.ruby-lang.org/ja/">Ruby</a>製の<a href="http://middlemanapp.com/">Middleman</a>によって作成されています。<br />
+従ってRubyが無ければ記録を残すことが出来ないので導入方法をまとめておきます。  </p>
+
+<p>1.必要なパッケージをインストールする<br />
+<code>
+	$ su - <br />
+  # apt-get install build-essential bison libreadline6-dev<br />
+  		curl git-core zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev<br />
+  		sqlite3 libxml2-dev libxslt1-dev autoconf libncurses5-dev<br />
+  # exit
+</code></p>
+
+<p>2.rbenvとruby-buildをgithubからクローンする<br />
+<code>
+  $ cd<br />
+  $ git clone git://github.com/sstephenson/rbenv.git .rbenv<br />
+  $ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build <br />
+</code></p>
+
+<p>3.rbenvが使えるようにする<br />
+bashの場合は<code>~/.bashrc</code>、zshの場合は<code>~/.zshrc</code>に下記の項目を追記する<br />
+<code>
+  export PATH="$HOME/.rbenv/bin:$PATH"<br />
+  eval "$(rbenv init -)"
+</code>
+追記後に<code>source ~/.bashrc</code>もしくは<code>source ~/.zshrc</code>を実行する  </p>
+
+<p>4.正常にrbenvの導入が出来ていれば、下記のように表示される<br />
+<code>
+  $rbenv
+  rbenv 0.4.0-52-g1cc7536(ここは導入したバージョンによって変わる)
+	Usage: rbenv <command /> [<args>]</args></code></p>
+
+<pre class="highlight text"><table><tbody><tr><td class="gutter gl"><div class="lineno">1</div><div class="lineno">2</div><div class="lineno">3</div><div class="lineno">4</div><div class="lineno">5</div><div class="lineno">6</div><div class="lineno">7</div><div class="lineno">8</div><div class="lineno">9</div><div class="lineno">10</div><div class="lineno">11</div><div class="lineno">12</div><div class="lineno">13</div><div class="lineno">14</div><div class="lineno">15</div></td><td class="code">Some useful rbenv commands are:
+   commands    List all available rbenv commands
+   local       Set or show the local application-specific Ruby version
+   global      Set or show the global Ruby version
+   shell       Set or show the shell-specific Ruby version
+   install     Install a Ruby version using the ruby-build plugin
+   uninstall   Uninstall a specific Ruby version
+   rehash      Rehash rbenv shims (run this after installing executables)
+   version     Show the current Ruby version and its origin
+   versions    List all Ruby versions available to rbenv
+   which       Display the full path to an executable
+   whence      List all Ruby versions that contain the given executable
+
+See `rbenv help &lt;command&gt;&#39; for information on a specific command.
+For full documentation, see: https://github.com/sstephenson/rbenv#readme &lt;/code&gt;
+</td></tr></tbody></table></pre>
+<p>5.導入可能Rubyのバージョンを調べる<br />
+<code>
+  $ rbenv install --list
+</code>
+とすると導入可能なRubyのバージョン一覧が表示される。(大量に有るので一部省略)<br />
+<code>
+	Available versions:<br />
+  ~ 省略 ~<br />
+  1.9.3-p448<br />
+  1.9.3-preview1<br />
+  1.9.3-rc1<br />
+  2.0.0-p195<br />
+  2.0.0-p247<br />
+  2.0.0-preview2<br />
+  2.0.0-rc2<br />
+  2.1.0-dev<br />
+  2.1.0-preview1<br />
+  ~ 省略 ~<br />
+</code></p>
+
+<p>6.Rubyをインストールする
+特に指定がなければ<code>-rc</code>や<code>-dev</code>、<code>-preview</code>ではない最新の安定板を入れましょう。<br />
+<code>
+	$ rbenv install 2.0.0-p247
+</code>
+インストールには少し時間がかかります。<br />
+ちなみにRaspberry Piでは３時間かかります。  </p>
+
+<p>7.rbenvでインストールしたRubyを読ませる。<br />
+<code>
+  $ rbenv rehash<br />
+  $ rbenv global 2.0.0-p247<br />
+  $ ruby --version<br />
+  ruby 2.0.0p247 (2013-06-27 revision 41674) [x86_64-darwin12.4.0]<br />
+</code></p>
+
+<p>これでRubyのインストール完了です。<br />
+Rubyに興味が有るなら、こちらのコミュニティをおすすめします。<br />
+<a href="http://hiroshimarb.github.io/">広島Ruby勉強会</a>		</p>
+
+<p>もしrbenvやruby-buildを更新したい場合は該当ディレクトリに移動し<code>git pull</code>して<code>source ~/.bashrc</code>もしくは<code>source ~/.zshrc</code>を実行すると更新されます。  </p>
+
+<p>追伸<br />
+記録を書くときに<code>bundle install</code>を実行しますが、実行時間を短くする小技としては<br />
+<code>~/.gemrc</code>ファイルを作成し、<code>gem: --no-ri --no-rdoc</code>と書いておくとよいでしょう。  </p>
+</p>
+              <hr>
+              Posted by もりしー<br />
+              Created at 2013-10-30 20:20<br />
+              Tags Ruby, すごい広島
+            </div>
+          </div>
+        </div>
+        <div class="uk-width-3-10">
+          <div id="sub_menu">
+  <h2>Recent Articles</h2>
+    <ol>
+      
+        <li><a href="/blog/2013/10/how_to_install_ruby_environment/">Ruby環境の作り方</a> <span>Oct 30</span></li>
+      
+    </ol>
+  <h2>Tags</h2>
+    <ol>
+      
+        <li><a href="/blog/:year/:month/tags/ruby/">Ruby</a> <div class="uk-badge uk-badge-notification">1</div></li>
+      
+        <li><a href="/blog/:year/:month/tags/.html">すごい広島</a> <div class="uk-badge uk-badge-notification">1</div></li>
+      
+    </ol>
+
+  <h2>By Year</h2>
+    <ol>
+      
+        <li><a href="/blog/2013/:month/:year/">2013</a> <div class="uk-badge uk-badge-notification">1</div></li>
+      
+    </ol>
+</div>
+        </div>
+      </div>
+    </div>
+    <footer>
+  Copyright &copy; 2013 Sapodeveloper All Rights Reserved.
+</footer>
+  </body>
+</html>
