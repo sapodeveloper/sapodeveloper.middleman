@@ -11,3 +11,4 @@ gem "builder", "~> 3.0"
 gem 'nokogiri'
 gem "middleman-livereload"
 gem 'middleman-deploy'
+gem "middleman-syntax"

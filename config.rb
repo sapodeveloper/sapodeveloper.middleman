@@ -118,3 +118,5 @@ activate :livereload
 # derectory support
 activate :directory_indexes
 
+activate :syntax, :line_numbers => true
+
