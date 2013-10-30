@@ -26,13 +26,44 @@
       <div class="uk-grid">
         <div class="uk-width-7-10">
           <div id="main" role="main">
-            <h3>もりしー</h3>
-<a href="https://www.ruby-lang.org/ja/">Ruby</a>をこよなく愛する学生。<br>
-主に使うエディタは<a href="http://www.sublimetext.com/">Sublime Text</a>。<br>
-<i class="uk-icon-github"></i> <a href="https://github.com/moriC">moriC</a><br>
-<i class="uk-icon-bitbucket"></i> <a href="https://bitbucket.org/moric">moric</a><br>
-<i class="uk-icon-facebook"></i> <a href="https://www.facebook.com/tomohiro.m0219">顔本</a><br>
-<i class="uk-icon-twitter"></i> <a href="https://twitter.com/CentBoss">CentBoss</a><br>
+            <h2>使い方</h2>
+<div class="uk-panel uk-panel-box">
+	<h3>環境構築編</h3>
+	<ol>
+		<li>環境を整えます</li>
+		<li>リポジトリからクローンします</li>
+			<code>git clone git@github.com:sapodeveloper/sapodeveloper.github.io.git</code>
+		<li>リポジトリの中へカレントディレクトリを変更します</li>
+			<code>cd sapodeveloper.github.io</code>
+		<li>環境設定コマンドを実行します</li>
+			<code>rake setup</code>
+		<li>記事を書きましょう</li>
+	</ol>
+</div>
+<br>
+<div class="uk-panel uk-panel-box">
+	<h3>記事の書き方編</h3>
+	<ol>
+		<li>rake new_post[記事の名前(英語で)]</li>
+			2013年10月30日に作成した場合、
+			<code>source/blog/2013/10</code>
+			に<code>2013-10-30-記事の名前.html.markdown</code>
+			が作られます。
+		<li>作られたファイルのFrontmatterを編集します</li>
+			<code>
+				---<br>
+				title: "記事の名前(ここは日本語でもOK)"<br>
+				date: 作成した日付が自動で入ります(例：2013-10-30)<br>
+				tags: タグ付けができます(例：Ruby, Ruby on Rails 複数有る場合は","で区切ります)<br>
+				auther: 誰が作成したか分かるように名前を書きます<br>
+				---
+			</code>
+		<li>Frontmatterの下から記事を書きます。markdownですが、markupで書けます</li>
+		<li>書いている記事は<code>rake preview</code>を実行し、<code>localhost:4567</code>にアクセスして確認できます</li>
+		<li>記事が書けたらcommitします</li>
+		<li>commit後に<code>rake deploy</code>で<code>sapodeveloper.github.io</code>にデプロイします</li>
+	</ol>
+</div>
           </div>
         </div>
         <div class="uk-width-3-10">
