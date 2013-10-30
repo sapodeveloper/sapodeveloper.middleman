@@ -1,0 +1,38 @@
+<h2>使い方</h2>
+<div class="uk-panel uk-panel-box">
+	<h3>環境構築編</h3>
+	<ol>
+		<li>環境を整えます</li>
+		<li>リポジトリからクローンします</li>
+			<code>git clone git@github.com:sapodeveloper/sapodeveloper.github.io.git</code>
+		<li>リポジトリの中へカレントディレクトリを変更します</li>
+			<code>cd sapodeveloper.github.io</code>
+		<li>環境設定コマンドを実行します</li>
+			<code>rake setup</code>
+		<li>記事を書きましょう</li>
+	</ol>
+</div>
+<br>
+<div class="uk-panel uk-panel-box">
+	<h3>記事の書き方編</h3>
+	<ol>
+		<li>rake new_post[記事の名前(英語で)]</li>
+			<%= Time.now.year %>年<%= Time.now.month %>月<%= Time.now.day %>日に作成した場合、
+			<code>source/blog/<%= Time.now.year %>/<%= Time.now.month %></code>
+			に<code><%= Time.now.year %>-<%= Time.now.month %>-<%= Time.now.day %>-記事の名前.html.markdown</code>
+			が作られます。
+		<li>作られたファイルのFrontmatterを編集します</li>
+			<code>
+				---<br>
+				title: "記事の名前(ここは日本語でもOK)"<br>
+				date: 作成した日付が自動で入ります(例：<%= Time.now.year %>-<%= Time.now.month %>-<%= Time.now.day %>)<br>
+				tags: タグ付けができます(例：Ruby, Ruby on Rails 複数有る場合は","で区切ります)<br>
+				auther: 誰が作成したか分かるように名前を書きます<br>
+				---
+			</code>
+		<li>Frontmatterの下から記事を書きます。markdownですが、markupで書けます</li>
+		<li>書いている記事は<code>rake preview</code>を実行し、<code>localhost:4567</code>にアクセスして確認できます</li>
+		<li>記事が書けたらcommitします</li>
+		<li>commit後に<code>rake deploy</code>で<code>sapodeveloper.github.io</code>にデプロイします</li>
+	</ol>
+</div>
