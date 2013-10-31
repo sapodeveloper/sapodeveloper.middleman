@@ -40,7 +40,7 @@ task :new_post, :title do |t, args|
   year = Time.now.strftime('%Y')
   month = Time.now.strftime('%m')
   created_at = Time.now.strftime('%Y-%m-%d')
-  filename = "source/blog/#{year}/#{month}/#{created_at}-#{title}.html.markdown"
+  filename = "source/blog/#{year}/#{month}/#{created_at}-#{title}.html.erb"
   if File.exist?(filename)
     puts "rake aborted! 既にファイルが存在しています。"
     exit
