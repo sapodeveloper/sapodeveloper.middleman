@@ -42,3 +42,20 @@
 		<li>commit後に<code>rake deploy</code>で<code>sapodeveloper.github.io</code>にデプロイします</li>
 	</ol>
 </div>
+<br>
+<div class="uk-panel uk-panel-box">
+	<h3>コードの書き方編</h3>
+	記事等でコードを書きたいときは下記のように書くとシンタックスハイライトされます。<br>
+	<code>
+		&lt;% code("ruby") do %&gt;<br>
+			&nbsp;def hoge<br>
+				&nbsp;&nbsp;puts hogehoge<br>
+			&nbsp;end<br>
+		&lt;% end %&gt;
+	</code>
+<% code("ruby") do %>
+	def hoge
+		puts hogehoge
+	end
+<% end %>
+</div>
