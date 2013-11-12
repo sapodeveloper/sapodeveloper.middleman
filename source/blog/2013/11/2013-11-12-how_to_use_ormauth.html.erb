@@ -1,0 +1,43 @@
+---
+auther: もりしー
+title: "Ormauthを導入する"
+date: 2013-11-12 22:48
+tags: FuelPHP, PHP
+---
+
+もりしーです<br>
+１日に2つも記事を書くのは正直しんどいので、今度から真面目に書けるタイミングで書こうと決意しています。<br>
+そんなことはどうでもよく、今日は「<%= link_to 'Ormauth', 'http://fuelphp.com/docs/packages/auth/ormauth/intro.html' %>」の導入方法についてです。<br>
+<br>
+Ormauthとは<%= link_to 'FuelPHP', 'http://fuelphp.com/'%>で利用できる認証パッケージの１つです。<br>
+標準搭載のauthやSimpleauthとは異なり、ORMの機能を付け加えた認証パッケージです。<br>
+前者とは異なり、オブジェクト指向でセキュリティが可能なため使いこなせれば開発が楽になります。<br>
+<br>
+さっそく導入方法をまとめていきます。
+<ol>
+	<li>必要な設定ファイルを用意する</li>
+	authパッケージを導入してあれば、<code>fuel/package/auth/config</code>に<code>auth.php</code>と<code>ormauth.php</code>があるはずなので、これらを<code>fuel/app/config</code>へコピーします。
+	<li>FuelPHPの設定を変更する</li>
+	FuelPHPのconfigファイルを変更し、常に関係するパッケージを読み込むように変更します。
+	<% code("php") do %>'always_load'  => array(
+	'packages'  => array(
+		'orm',
+		'auth'
+	),
+),<% end %>
+	<li>authパッケージでOrmauthパッケージを使用するように変更する</li>
+	<% code("php") do %>return array(
+	'driver' => 'Ormauth',
+	'verify_multiple_logins' => false,
+	'salt' => 'put_your_salt_here',
+	'iterations' => 10000,
+);<% end %>
+	<li>必要な管理テーブルを作成する</li>
+	<% code() do %>$ oil r migrate --packages=auth<% end %>
+	正常に実行終了すれば、9つのテーブルが作成されます。
+	<li>マイグレーションファイルをコピーする</li>
+	次回以降のmigrate実行時に必要なため、<code>fuel/package/auth/migrations</code>の中のファイルを<code>fuel/app/migrations</code>にコピーしておきます。
+</ol>
+これで認証必要な環境が整いました。<br>
+これらの状態で既にadminユーザが存在しています。<br>
+あとは認証機能を実装するだけです。それはまた次回にでも誰かが…。
