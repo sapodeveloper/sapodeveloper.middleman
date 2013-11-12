@@ -1,0 +1,26 @@
+html,body {
+  height: 100%;
+  width: 100%;
+}
+h2 {
+  font-size: 30px !important;
+}
+.uk-container {
+  height: auto;
+}
+#main {
+  height: auto;
+  margin-top: 20px;
+}
+#sub_menu {
+  padding-left: 10px;
+  border-left: 1px solid #eee;
+  margin-top: 20px;
+}
+footer {
+  text-align: center;
+  border-top: 1px solid #eee;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
