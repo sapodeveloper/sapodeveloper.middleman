@@ -5,10 +5,74 @@
   <id>http://blog.url.com/blog/:year/:month</id>
   <link href="http://blog.url.com/blog/:year/:month"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2013-10-30T11:20:00Z</updated>
+  <updated>2013-11-12T13:15:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>FuelPHPの開発環境の作り方</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2013/11/how_to_stand_by_fuelphp/"/>
+    <id>http://blog.url.com/blog/2013/11/how_to_stand_by_fuelphp/</id>
+    <published>2013-11-12T13:15:00Z</published>
+    <updated>2013-11-12T22:46:05+09:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">もりしーです。&lt;br&gt;
+今日は&lt;a href="http://fuelphp.com/"&gt;FuelPHP&lt;/a&gt;の開発環境の導入方法をまとめていきたいと思います。&lt;br&gt;
+&lt;br&gt;
+
+FuelPHPというのは&lt;a href="http://www.php.net/"&gt;PHP&lt;/a&gt;で作られたHMVCアーキテクチャで実装されているWebアプリケーションフレームワークですね。&lt;br&gt;
+これの導入方法をまとめていきます。&lt;br&gt;
+&lt;ol&gt;
+	&lt;li&gt;oilコマンドをインストールする&lt;/li&gt;
+		FuelPHPでの開発環境に必須なのが、この「&lt;a href="http://fuelphp.com/docs/packages/oil/intro.html"&gt;oil&lt;/a&gt;」コマンド。これを入れないと話になりませんね。&lt;br&gt;
+		&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ curl get.fuelphp.com/oil | sh &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+	&lt;li&gt;FuelPHPの開発環境を構築する&lt;/li&gt;
+		他にすると思うようで、oilコマンドさえインストールできれば、もうFuelPHPを使う準備は出来ています。
+		&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ oil create プロジェクト名 &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+		これで、プロジェクト名のフォルダが新規作成され、最新のFuelPHPの開発環境が構築されます。
+&lt;/ol&gt;
+&lt;br&gt;
+ちなみにこの状態で作られたFuelPHPのプロジェクトはすでに&lt;a href="http://git-scm.com/"&gt;Git&lt;/a&gt;で管理されています。&lt;br&gt;
+&lt;a href="https://github.com/"&gt;Github&lt;/a&gt;などのリポジトリサービスで使用するには一工夫が必要です。&lt;br&gt;
+今回は、GithubでFuelPHPのリポジトリを管理するための環境構築方法もおまけでまとめておきます。&lt;br&gt;
+&lt;ol&gt;
+	&lt;li&gt;FuelPHPの開発環境を構築する&lt;/li&gt;
+		まずは、これをしないと話になりませんね。
+		&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ oil create プロジェクト名 &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+	&lt;li&gt;次に作成したプロジェクトの中に移動しましょう&lt;/li&gt;
+		&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ cd プロジェクト名 &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+	&lt;li&gt;不要なファイルを全て削除します。&lt;/li&gt;
+		&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ rm -rf .git .gitmodules *.md docs fuel/core fuel/packages &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+		これでFuelPHP自体のプロジェクト変更点や、それに関する他のパッケージも一度消えます。
+	&lt;li&gt;再度Gitで管理するようにします&lt;/li&gt;
+		&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ git init &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+		これで、開発プロジェクトのみの変更点をGitで管理できるようになりましたね。
+	&lt;li&gt;FuelPHPのコアパッケージの再インストールをします&lt;/li&gt;
+&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;div class="lineno"&gt;4&lt;/div&gt;&lt;div class="lineno"&gt;5&lt;/div&gt;&lt;div class="lineno"&gt;6&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;$ git submodule add git://github.com/fuel/core.git fuel/core
+$ git submodule add git://github.com/fuel/oil.git fuel/packages/oil
+$ git submodule add git://github.com/fuel/auth.git fuel/packages/auth
+$ git submodule add git://github.com/fuel/parser.git fuel/packages/parser
+$ git submodule add git://github.com/fuel/orm.git fuel/packages/orm
+$ git submodule add git://github.com/fuel/email.git fuel/packages/email&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+	これで必要なコアパッケージをsubmoduleという別のGit管理環境で用意することが出来ます。
+	&lt;li&gt;リモートリポジトリをGithubにします&lt;/li&gt;
+		&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $  git remote add origin git@github.com:ユーザ名/リポジトリ名 &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+		このリポジトリは予め作成しておきましょうね。
+	&lt;li&gt;最後にここまでの変更点を記録してpushしておきましょう&lt;/li&gt;
+	&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;$ git add .
+$ git commit -m &amp;quot;FuelPHPでの開発環境の構築&amp;quot;
+$ git push origin master&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+&lt;/ol&gt;
+これでGithubなどのリポジトリサービスを利用した開発ができますね。&lt;br&gt;
+ちなみに、submoduleで導入したパッケージの更新は
+&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ git submodule foreach &amp;#39;git checkout 任意のバージョン/master&amp;#39;
+$ git submodule foreach &amp;#39;git pull&amp;#39;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+で一括更新ができます。&lt;br&gt;
+&lt;br&gt;
+これで楽しいGithub生活や楽しいFuelPHP開発生活をエンジョイできますね(笑)</content>
+  </entry>
   <entry>
     <title>Ruby環境の作り方</title>
     <link rel="alternate" href="http://blog.url.com/blog/2013/10/how_to_install_ruby_environment/"/>
