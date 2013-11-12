@@ -19,6 +19,8 @@ FuelPHPというのは<%= link_to 'PHP', 'http://www.php.net/' %>で作られた
 		他にすると思うようで、oilコマンドさえインストールできれば、もうFuelPHPを使う準備は出来ています。
 		<% code() do %> $ oil create プロジェクト名 <% end %>
 		これで、プロジェクト名のフォルダが新規作成され、最新のFuelPHPの開発環境が構築されます。
+	<li>最後にcomposerの更新をしておきます。</li>
+	<% code() do %> $ php composer.phar update <% end %>
 </ol>
 <br>
 ちなみにこの状態で作られたFuelPHPのプロジェクトはすでに<%= link_to 'Git', 'http://git-scm.com/' %>で管理されています。<br>
@@ -47,10 +49,12 @@ $ git submodule add git://github.com/fuel/email.git fuel/packages/email<% end %>
 	<li>リモートリポジトリをGithubにします</li>
 		<% code() do %> $  git remote add origin git@github.com:ユーザ名/リポジトリ名 <% end %>
 		このリポジトリは予め作成しておきましょうね。
-	<li>最後にここまでの変更点を記録してpushしておきましょう</li>
+	<li>ここまでの変更点を記録してpushしておきましょう</li>
 	<% code() do %>$ git add .
 $ git commit -m "FuelPHPでの開発環境の構築"
 $ git push origin master<% end %>
+	<li>最後にcomposerの更新をしておきます。</li>
+	<% code() do %> $ php composer.phar update <% end %>
 </ol>
 これでGithubなどのリポジトリサービスを利用した開発ができますね。<br>
 ちなみに、submoduleで導入したパッケージの更新は
