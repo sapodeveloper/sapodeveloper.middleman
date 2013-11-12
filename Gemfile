@@ -12,3 +12,6 @@ gem 'nokogiri'
 gem "middleman-livereload"
 gem 'middleman-deploy'
 gem "middleman-syntax"
+
+gem 'execjs'
+gem 'therubyracer'
