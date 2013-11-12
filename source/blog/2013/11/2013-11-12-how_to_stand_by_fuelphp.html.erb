@@ -1,0 +1,61 @@
+---
+auther: もりしー
+title: "FuelPHPの開発環境の作り方"
+date: 2013-11-12 22:15
+tags: FuelPHP, PHP, Github, Git
+---
+
+もりしーです。<br>
+今日は<%= link_to 'FuelPHP', 'http://fuelphp.com/'%>の開発環境の導入方法をまとめていきたいと思います。<br>
+<br>
+
+FuelPHPというのは<%= link_to 'PHP', 'http://www.php.net/' %>で作られたHMVCアーキテクチャで実装されているWebアプリケーションフレームワークですね。<br>
+これの導入方法をまとめていきます。<br>
+<ol>
+	<li>oilコマンドをインストールする</li>
+		FuelPHPでの開発環境に必須なのが、この「<%= link_to 'oil', 'http://fuelphp.com/docs/packages/oil/intro.html' %>」コマンド。これを入れないと話になりませんね。<br>
+		<% code() do %> $ curl get.fuelphp.com/oil | sh <% end %>
+	<li>FuelPHPの開発環境を構築する</li>
+		他にすると思うようで、oilコマンドさえインストールできれば、もうFuelPHPを使う準備は出来ています。
+		<% code() do %> $ oil create プロジェクト名 <% end %>
+		これで、プロジェクト名のフォルダが新規作成され、最新のFuelPHPの開発環境が構築されます。
+</ol>
+<br>
+ちなみにこの状態で作られたFuelPHPのプロジェクトはすでに<%= link_to 'Git', 'http://git-scm.com/' %>で管理されています。<br>
+<%= link_to 'Github', 'https://github.com/' %>などのリポジトリサービスで使用するには一工夫が必要です。<br>
+今回は、GithubでFuelPHPのリポジトリを管理するための環境構築方法もおまけでまとめておきます。<br>
+<ol>
+	<li>FuelPHPの開発環境を構築する</li>
+		まずは、これをしないと話になりませんね。
+		<% code() do %> $ oil create プロジェクト名 <% end %>
+	<li>次に作成したプロジェクトの中に移動しましょう</li>
+		<% code() do %> $ cd プロジェクト名 <% end %>
+	<li>不要なファイルを全て削除します。</li>
+		<% code() do %> $ rm -rf .git .gitmodules *.md docs fuel/core fuel/packages <% end %>
+		これでFuelPHP自体のプロジェクト変更点や、それに関する他のパッケージも一度消えます。
+	<li>再度Gitで管理するようにします</li>
+		<% code() do %> $ git init <% end %>
+		これで、開発プロジェクトのみの変更点をGitで管理できるようになりましたね。
+	<li>FuelPHPのコアパッケージの再インストールをします</li>
+<% code() do %>$ git submodule add git://github.com/fuel/core.git fuel/core
+$ git submodule add git://github.com/fuel/oil.git fuel/packages/oil
+$ git submodule add git://github.com/fuel/auth.git fuel/packages/auth
+$ git submodule add git://github.com/fuel/parser.git fuel/packages/parser
+$ git submodule add git://github.com/fuel/orm.git fuel/packages/orm
+$ git submodule add git://github.com/fuel/email.git fuel/packages/email<% end %>
+	これで必要なコアパッケージをsubmoduleという別のGit管理環境で用意することが出来ます。
+	<li>リモートリポジトリをGithubにします</li>
+		<% code() do %> $  git remote add origin git@github.com:ユーザ名/リポジトリ名 <% end %>
+		このリポジトリは予め作成しておきましょうね。
+	<li>最後にここまでの変更点を記録してpushしておきましょう</li>
+	<% code() do %>$ git add .
+$ git commit -m "FuelPHPでの開発環境の構築"
+$ git push origin master<% end %>
+</ol>
+これでGithubなどのリポジトリサービスを利用した開発ができますね。<br>
+ちなみに、submoduleで導入したパッケージの更新は
+<% code() do %> $ git submodule foreach 'git checkout 任意のバージョン/master'
+$ git submodule foreach 'git pull'<% end %>
+で一括更新ができます。<br>
+<br>
+これで楽しいGithub生活や楽しいFuelPHP開発生活をエンジョイできますね(笑)
