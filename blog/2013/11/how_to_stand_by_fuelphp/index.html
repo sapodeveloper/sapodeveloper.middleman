@@ -43,6 +43,8 @@ FuelPHPというのは<a href="http://www.php.net/">PHP</a>で作られたHMVC�
 		他にすると思うようで、oilコマンドさえインストールできれば、もうFuelPHPを使う準備は出来ています。
 		<pre class="highlight text"><table><tbody><tr><td class="gutter gl"><div class="lineno">1</div></td><td class="code"> $ oil create プロジェクト名 </td></tr></tbody></table></pre>
 		これで、プロジェクト名のフォルダが新規作成され、最新のFuelPHPの開発環境が構築されます。
+	<li>最後にcomposerの更新をしておきます。</li>
+	<pre class="highlight text"><table><tbody><tr><td class="gutter gl"><div class="lineno">1</div></td><td class="code"> $ php composer.phar update </td></tr></tbody></table></pre>
 </ol>
 <br>
 ちなみにこの状態で作られたFuelPHPのプロジェクトはすでに<a href="http://git-scm.com/">Git</a>で管理されています。<br>
@@ -71,10 +73,12 @@ $ git submodule add git://github.com/fuel/email.git fuel/packages/email</td></tr
 	<li>リモートリポジトリをGithubにします</li>
 		<pre class="highlight text"><table><tbody><tr><td class="gutter gl"><div class="lineno">1</div></td><td class="code"> $  git remote add origin git@github.com:ユーザ名/リポジトリ名 </td></tr></tbody></table></pre>
 		このリポジトリは予め作成しておきましょうね。
-	<li>最後にここまでの変更点を記録してpushしておきましょう</li>
+	<li>ここまでの変更点を記録してpushしておきましょう</li>
 	<pre class="highlight text"><table><tbody><tr><td class="gutter gl"><div class="lineno">1</div><div class="lineno">2</div><div class="lineno">3</div></td><td class="code">$ git add .
 $ git commit -m &quot;FuelPHPでの開発環境の構築&quot;
 $ git push origin master</td></tr></tbody></table></pre>
+	<li>最後にcomposerの更新をしておきます。</li>
+	<pre class="highlight text"><table><tbody><tr><td class="gutter gl"><div class="lineno">1</div></td><td class="code"> $ php composer.phar update </td></tr></tbody></table></pre>
 </ol>
 これでGithubなどのリポジトリサービスを利用した開発ができますね。<br>
 ちなみに、submoduleで導入したパッケージの更新は
@@ -95,6 +99,8 @@ $ git submodule foreach &#39;git pull&#39;</td></tr></tbody></table></pre>
   <h2>Recent Articles</h2>
     <ol>
       
+        <li><a href="/blog/2013/11/how_to_use_ormauth/">Ormauthを導入する</a> <span>Nov 12</span></li>
+      
         <li><a href="/blog/2013/11/how_to_stand_by_fuelphp/">FuelPHPの開発環境の作り方</a> <span>Nov 12</span></li>
       
         <li><a href="/blog/2013/10/how_to_install_ruby_environment/">Ruby環境の作り方</a> <span>Oct 30</span></li>
@@ -107,9 +113,9 @@ $ git submodule foreach &#39;git pull&#39;</td></tr></tbody></table></pre>
       
         <li><a href="/blog/:year/:month/tags/.html">すごい広島</a> <div class="uk-badge uk-badge-notification">1</div></li>
       
-        <li><a href="/blog/:year/:month/tags/fuelphp/">FuelPHP</a> <div class="uk-badge uk-badge-notification">1</div></li>
+        <li><a href="/blog/:year/:month/tags/fuelphp/">FuelPHP</a> <div class="uk-badge uk-badge-notification">2</div></li>
       
-        <li><a href="/blog/:year/:month/tags/php/">PHP</a> <div class="uk-badge uk-badge-notification">1</div></li>
+        <li><a href="/blog/:year/:month/tags/php/">PHP</a> <div class="uk-badge uk-badge-notification">2</div></li>
       
         <li><a href="/blog/:year/:month/tags/github/">Github</a> <div class="uk-badge uk-badge-notification">1</div></li>
       
@@ -120,7 +126,7 @@ $ git submodule foreach &#39;git pull&#39;</td></tr></tbody></table></pre>
   <h2>By Year</h2>
     <ol>
       
-        <li><a href="/blog/2013/:month/:year/">2013</a> <div class="uk-badge uk-badge-notification">2</div></li>
+        <li><a href="/blog/2013/:month/:year/">2013</a> <div class="uk-badge uk-badge-notification">3</div></li>
       
     </ol>
 </div>

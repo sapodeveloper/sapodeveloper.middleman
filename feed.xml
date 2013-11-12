@@ -5,16 +5,62 @@
   <id>http://blog.url.com/blog/:year/:month</id>
   <link href="http://blog.url.com/blog/:year/:month"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2013-11-12T13:15:00Z</updated>
+  <updated>2013-11-12T13:48:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Ormauthを導入する</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2013/11/how_to_use_ormauth/"/>
+    <id>http://blog.url.com/blog/2013/11/how_to_use_ormauth/</id>
+    <published>2013-11-12T13:48:00Z</published>
+    <updated>2013-11-12T23:07:45+09:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">もりしーです&lt;br&gt;
+１日に2つも記事を書くのは正直しんどいので、今度から真面目に書けるタイミングで書こうと決意しています。&lt;br&gt;
+そんなことはどうでもよく、今日は「&lt;a href="http://fuelphp.com/docs/packages/auth/ormauth/intro.html"&gt;Ormauth&lt;/a&gt;」の導入方法についてです。&lt;br&gt;
+&lt;br&gt;
+Ormauthとは&lt;a href="http://fuelphp.com/"&gt;FuelPHP&lt;/a&gt;で利用できる認証パッケージの１つです。&lt;br&gt;
+標準搭載のauthやSimpleauthとは異なり、ORMの機能を付け加えた認証パッケージです。&lt;br&gt;
+前者とは異なり、オブジェクト指向でセキュリティが可能なため使いこなせれば開発が楽になります。&lt;br&gt;
+&lt;br&gt;
+さっそく導入方法をまとめていきます。
+&lt;ol&gt;
+	&lt;li&gt;必要な設定ファイルを用意する&lt;/li&gt;
+	authパッケージを導入してあれば、&lt;code&gt;fuel/package/auth/config&lt;/code&gt;に&lt;code&gt;auth.php&lt;/code&gt;と&lt;code&gt;ormauth.php&lt;/code&gt;があるはずなので、これらを&lt;code&gt;fuel/app/config&lt;/code&gt;へコピーします。
+	&lt;li&gt;FuelPHPの設定を変更する&lt;/li&gt;
+	FuelPHPのconfigファイルを変更し、常に関係するパッケージを読み込むように変更します。
+	&lt;pre class="highlight php"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;div class="lineno"&gt;4&lt;/div&gt;&lt;div class="lineno"&gt;5&lt;/div&gt;&lt;div class="lineno"&gt;6&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&amp;#39;always_load&amp;#39;  =&amp;gt; array(
+	&amp;#39;packages&amp;#39;  =&amp;gt; array(
+		&amp;#39;orm&amp;#39;,
+		&amp;#39;auth&amp;#39;
+	),
+),&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+	&lt;li&gt;authパッケージでOrmauthパッケージを使用するように変更する&lt;/li&gt;
+	&lt;pre class="highlight php"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;div class="lineno"&gt;4&lt;/div&gt;&lt;div class="lineno"&gt;5&lt;/div&gt;&lt;div class="lineno"&gt;6&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;return array(
+	&amp;#39;driver&amp;#39; =&amp;gt; &amp;#39;Ormauth&amp;#39;,
+	&amp;#39;verify_multiple_logins&amp;#39; =&amp;gt; false,
+	&amp;#39;salt&amp;#39; =&amp;gt; &amp;#39;put_your_salt_here&amp;#39;,
+	&amp;#39;iterations&amp;#39; =&amp;gt; 10000,
+);&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+	&lt;li&gt;必要な管理テーブルを作成する&lt;/li&gt;
+	&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;$ oil r migrate --packages=auth&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+	正常に実行終了すれば、9つのテーブルが作成されます。
+	&lt;li&gt;マイグレーションファイルをコピーする&lt;/li&gt;
+	次回以降のmigrate実行時に必要なため、&lt;code&gt;fuel/package/auth/migrations&lt;/code&gt;の中のファイルを&lt;code&gt;fuel/app/migrations&lt;/code&gt;にコピーしておきます。
+&lt;/ol&gt;
+これで認証必要な環境が整いました。&lt;br&gt;
+これらの状態で既にadminユーザが存在しています。&lt;br&gt;
+あとは認証機能を実装するだけです。それはまた次回にでも誰かが…。</content>
+  </entry>
   <entry>
     <title>FuelPHPの開発環境の作り方</title>
     <link rel="alternate" href="http://blog.url.com/blog/2013/11/how_to_stand_by_fuelphp/"/>
     <id>http://blog.url.com/blog/2013/11/how_to_stand_by_fuelphp/</id>
     <published>2013-11-12T13:15:00Z</published>
-    <updated>2013-11-12T22:46:05+09:00</updated>
+    <updated>2013-11-12T23:10:22+09:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -32,6 +78,8 @@ FuelPHPというのは&lt;a href="http://www.php.net/"&gt;PHP&lt;/a&gt;で作ら
 		他にすると思うようで、oilコマンドさえインストールできれば、もうFuelPHPを使う準備は出来ています。
 		&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ oil create プロジェクト名 &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
 		これで、プロジェクト名のフォルダが新規作成され、最新のFuelPHPの開発環境が構築されます。
+	&lt;li&gt;最後にcomposerの更新をしておきます。&lt;/li&gt;
+	&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ php composer.phar update &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
 &lt;/ol&gt;
 &lt;br&gt;
 ちなみにこの状態で作られたFuelPHPのプロジェクトはすでに&lt;a href="http://git-scm.com/"&gt;Git&lt;/a&gt;で管理されています。&lt;br&gt;
@@ -60,10 +108,12 @@ $ git submodule add git://github.com/fuel/email.git fuel/packages/email&lt;/td&g
 	&lt;li&gt;リモートリポジトリをGithubにします&lt;/li&gt;
 		&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $  git remote add origin git@github.com:ユーザ名/リポジトリ名 &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
 		このリポジトリは予め作成しておきましょうね。
-	&lt;li&gt;最後にここまでの変更点を記録してpushしておきましょう&lt;/li&gt;
+	&lt;li&gt;ここまでの変更点を記録してpushしておきましょう&lt;/li&gt;
 	&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;$ git add .
 $ git commit -m &amp;quot;FuelPHPでの開発環境の構築&amp;quot;
 $ git push origin master&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+	&lt;li&gt;最後にcomposerの更新をしておきます。&lt;/li&gt;
+	&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ php composer.phar update &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
 &lt;/ol&gt;
 これでGithubなどのリポジトリサービスを利用した開発ができますね。&lt;br&gt;
 ちなみに、submoduleで導入したパッケージの更新は
