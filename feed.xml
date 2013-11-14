@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Blog Name</title>
+  <subtitle>Blog subtitle</subtitle>
+  <id>http://blog.url.com/blog/:year/:month</id>
+  <link href="http://blog.url.com/blog/:year/:month"/>
+  <link href="http://blog.url.com/feed.xml" rel="self"/>
+  <updated>2013-11-13T06:32:00Z</updated>
+  <author>
+    <name>Blog Author</name>
+  </author>
+  <entry>
+    <title>PHPの復習</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2013/11/test/"/>
+    <id>http://blog.url.com/blog/2013/11/test/</id>
+    <published>2013-11-13T06:32:00Z</published>
+    <updated>2013-11-14T14:47:13+09:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">ミーです。&lt;br&gt;
+本格的な作業開始の前にPHPの復習しときます。&lt;br&gt;
+&lt;br&gt;
+～PHP基本～&lt;br&gt;
+注：あくまで私の確認作業です。アテになりません。はい。&lt;br&gt;
+&lt;br&gt;
+テキストボックス＆クリックボタン
+&lt;form&gt;
+&lt;input type="text" name="name" size="40"&gt;
+&lt;br&gt;
+&lt;input type="submit" value="ココ"&gt;
+&lt;/form&gt;
+コードは下記
+&lt;pre class="highlight ruby"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;div class="lineno"&gt;4&lt;/div&gt;&lt;div class="lineno"&gt;5&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;form&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;input&lt;/span&gt; &lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;text&amp;quot;&lt;/span&gt; &lt;span class="nb"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;text&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;40&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;br&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;input&lt;/span&gt; &lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;submit&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ココ&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="sr"&gt;/form&amp;gt;
+&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt; 
+実際はもっと複雑ですがここではあっさりと。ログインページでは必須な機能です。&lt;br&gt;
+&lt;br&gt;
+セレクトフォーム&lt;br&gt;
+&lt;select	 name	 =	 “select”&gt;
+&lt;option&gt;09:00-10:30&lt;/option&gt;
+&lt;option&gt;10:45-12:15&lt;/option&gt;
+&lt;option&gt;13:15-14:45&lt;/option&gt;
+&lt;option&gt;15:00-16:30&lt;/option&gt;
+&lt;option&gt;16:45-18:15&lt;/option&gt;
+&lt;/select&gt;&lt;br&gt;
+コードは下記
+&lt;pre class="highlight ruby"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;div class="lineno"&gt;4&lt;/div&gt;&lt;div class="lineno"&gt;5&lt;/div&gt;&lt;div class="lineno"&gt;6&lt;/div&gt;&lt;div class="lineno"&gt;7&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nb"&gt;select&lt;/span&gt;	 &lt;span class="nb"&gt;name&lt;/span&gt;	 &lt;span class="o"&gt;=&lt;/span&gt;	 &lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="nb"&gt;select&lt;/span&gt;&lt;span class="err"&gt;”&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;09&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mo"&gt;00&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="sr"&gt;/option&amp;gt;
+&amp;lt;option&amp;gt;10:45-12:15&amp;lt;/o&lt;/span&gt;&lt;span class="n"&gt;ption&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;45&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="sr"&gt;/option&amp;gt;
+&amp;lt;option&amp;gt;15:00-16:30&amp;lt;/o&lt;/span&gt;&lt;span class="n"&gt;ption&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;45&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="sr"&gt;/option&amp;gt;
+&amp;lt;/se&lt;/span&gt;&lt;span class="n"&gt;lect&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt; 
+例として講義時間の選択を製作。使い道はある。&lt;br&gt;
+&lt;br&gt;
+この他にも表の表示、データの送信、リンクを貼るといった機能があり、&lt;br&gt;
+これらの組み合わせでシステムのページを作ってます。&lt;br&gt;
+実際にソースを見たいなら、ツールバー～表示～ソースで見れます。正直分かりませんが。&lt;br&gt;
+&lt;br&gt;
+ではでは今回はここまで。次回は実際にページを作ってみたいと思います。&lt;br&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Ormauthを導入する</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2013/11/how_to_use_ormauth/"/>
+    <id>http://blog.url.com/blog/2013/11/how_to_use_ormauth/</id>
+    <published>2013-11-12T13:48:00Z</published>
+    <updated>2013-11-14T16:44:02+09:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">もりしーです&lt;br&gt;
+１日に2つも記事を書くのは正直しんどいので、今度から真面目に書けるタイミングで書こうと決意しています。&lt;br&gt;
+そんなことはどうでもよく、今日は「&lt;a href="http://fuelphp.com/docs/packages/auth/ormauth/intro.html"&gt;Ormauth&lt;/a&gt;」の導入方法についてです。&lt;br&gt;
+&lt;br&gt;
+Ormauthとは&lt;a href="http://fuelphp.com/"&gt;FuelPHP&lt;/a&gt;で利用できる認証パッケージの１つです。&lt;br&gt;
+標準搭載のauthやSimpleauthとは異なり、ORMの機能を付け加えた認証パッケージです。&lt;br&gt;
+前者とは異なり、オブジェクト指向でセキュリティが可能なため使いこなせれば開発が楽になります。&lt;br&gt;
+&lt;br&gt;
+さっそく導入方法をまとめていきます。
+&lt;ol&gt;
+	&lt;li&gt;必要な設定ファイルを用意する&lt;/li&gt;
+	authパッケージを導入してあれば、&lt;code&gt;fuel/package/auth/config&lt;/code&gt;に&lt;code&gt;auth.php&lt;/code&gt;と&lt;code&gt;ormauth.php&lt;/code&gt;があるはずなので、これらを&lt;code&gt;fuel/app/config&lt;/code&gt;へコピーします。
+	&lt;li&gt;FuelPHPの設定を変更する&lt;/li&gt;
+	FuelPHPのconfigファイルを変更し、常に関係するパッケージを読み込むように変更します。
+	&lt;pre class="highlight php"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;div class="lineno"&gt;4&lt;/div&gt;&lt;div class="lineno"&gt;5&lt;/div&gt;&lt;div class="lineno"&gt;6&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&amp;#39;always_load&amp;#39;  =&amp;gt; array(
+	&amp;#39;packages&amp;#39;  =&amp;gt; array(
+		&amp;#39;orm&amp;#39;,
+		&amp;#39;auth&amp;#39;
+	),
+),&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+	&lt;li&gt;authパッケージでOrmauthパッケージを使用するように変更する&lt;/li&gt;
+	&lt;pre class="highlight php"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;div class="lineno"&gt;4&lt;/div&gt;&lt;div class="lineno"&gt;5&lt;/div&gt;&lt;div class="lineno"&gt;6&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;return array(
+	&amp;#39;driver&amp;#39; =&amp;gt; &amp;#39;Ormauth&amp;#39;,
+	&amp;#39;verify_multiple_logins&amp;#39; =&amp;gt; false,
+	&amp;#39;salt&amp;#39; =&amp;gt; &amp;#39;put_your_salt_here&amp;#39;,
+	&amp;#39;iterations&amp;#39; =&amp;gt; 10000,
+);&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+	&lt;li&gt;必要な管理テーブルを作成する&lt;/li&gt;
+	&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;$ oil r migrate --packages=auth&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+	正常に実行終了すれば、9つのテーブルが作成されます。
+	&lt;li&gt;マイグレーションファイルをコピーする&lt;/li&gt;
+	次回以降のmigrate実行時に必要なため、&lt;code&gt;fuel/package/auth/migrations&lt;/code&gt;の中のファイルを&lt;code&gt;fuel/app/migrations&lt;/code&gt;にコピーしておきます。
+&lt;/ol&gt;
+これで認証必要な環境が整いました。&lt;br&gt;
+これらの状態で既にadminユーザが存在しています。&lt;br&gt;
+あとは認証機能を実装するだけです。それはまた次回にでも誰かが…。</content>
+  </entry>
+  <entry>
+    <title>FuelPHPの開発環境の作り方</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2013/11/how_to_stand_by_fuelphp/"/>
+    <id>http://blog.url.com/blog/2013/11/how_to_stand_by_fuelphp/</id>
+    <published>2013-11-12T13:15:00Z</published>
+    <updated>2013-11-14T16:44:02+09:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">もりしーです。&lt;br&gt;
+今日は&lt;a href="http://fuelphp.com/"&gt;FuelPHP&lt;/a&gt;の開発環境の導入方法をまとめていきたいと思います。&lt;br&gt;
+&lt;br&gt;
+
+FuelPHPというのは&lt;a href="http://www.php.net/"&gt;PHP&lt;/a&gt;で作られたHMVCアーキテクチャで実装されているWebアプリケーションフレームワークですね。&lt;br&gt;
+これの導入方法をまとめていきます。&lt;br&gt;
+&lt;ol&gt;
+	&lt;li&gt;oilコマンドをインストールする&lt;/li&gt;
+		FuelPHPでの開発環境に必須なのが、この「&lt;a href="http://fuelphp.com/docs/packages/oil/intro.html"&gt;oil&lt;/a&gt;」コマンド。これを入れないと話になりませんね。&lt;br&gt;
+		&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ curl get.fuelphp.com/oil | sh &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+	&lt;li&gt;FuelPHPの開発環境を構築する&lt;/li&gt;
+		他にすると思うようで、oilコマンドさえインストールできれば、もうFuelPHPを使う準備は出来ています。
+		&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ oil create プロジェクト名 &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+		これで、プロジェクト名のフォルダが新規作成され、最新のFuelPHPの開発環境が構築されます。
+	&lt;li&gt;最後にcomposerの更新をしておきます。&lt;/li&gt;
+	&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ php composer.phar update &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+ちなみにこの状態で作られたFuelPHPのプロジェクトはすでに&lt;a href="http://git-scm.com/"&gt;Git&lt;/a&gt;で管理されています。&lt;br&gt;
+&lt;a href="https://github.com/"&gt;Github&lt;/a&gt;などのリポジトリサービスで使用するには一工夫が必要です。&lt;br&gt;
+今回は、GithubでFuelPHPのリポジトリを管理するための環境構築方法もおまけでまとめておきます。&lt;br&gt;
+&lt;ol&gt;
+	&lt;li&gt;FuelPHPの開発環境を構築する&lt;/li&gt;
+		まずは、これをしないと話になりませんね。
+		&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ oil create プロジェクト名 &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+	&lt;li&gt;次に作成したプロジェクトの中に移動しましょう&lt;/li&gt;
+		&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ cd プロジェクト名 &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+	&lt;li&gt;不要なファイルを全て削除します。&lt;/li&gt;
+		&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ rm -rf .git .gitmodules *.md docs fuel/core fuel/packages &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+		これでFuelPHP自体のプロジェクト変更点や、それに関する他のパッケージも一度消えます。
+	&lt;li&gt;再度Gitで管理するようにします&lt;/li&gt;
+		&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ git init &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+		これで、開発プロジェクトのみの変更点をGitで管理できるようになりましたね。
+	&lt;li&gt;FuelPHPのコアパッケージの再インストールをします&lt;/li&gt;
+&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;div class="lineno"&gt;4&lt;/div&gt;&lt;div class="lineno"&gt;5&lt;/div&gt;&lt;div class="lineno"&gt;6&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;$ git submodule add git://github.com/fuel/core.git fuel/core
+$ git submodule add git://github.com/fuel/oil.git fuel/packages/oil
+$ git submodule add git://github.com/fuel/auth.git fuel/packages/auth
+$ git submodule add git://github.com/fuel/parser.git fuel/packages/parser
+$ git submodule add git://github.com/fuel/orm.git fuel/packages/orm
+$ git submodule add git://github.com/fuel/email.git fuel/packages/email&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+	これで必要なコアパッケージをsubmoduleという別のGit管理環境で用意することが出来ます。
+	&lt;li&gt;リモートリポジトリをGithubにします&lt;/li&gt;
+		&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $  git remote add origin git@github.com:ユーザ名/リポジトリ名 &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+		このリポジトリは予め作成しておきましょうね。
+	&lt;li&gt;ここまでの変更点を記録してpushしておきましょう&lt;/li&gt;
+	&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;$ git add .
+$ git commit -m &amp;quot;FuelPHPでの開発環境の構築&amp;quot;
+$ git push origin master&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+	&lt;li&gt;最後にcomposerの更新をしておきます。&lt;/li&gt;
+	&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ php composer.phar update &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+&lt;/ol&gt;
+これでGithubなどのリポジトリサービスを利用した開発ができますね。&lt;br&gt;
+ちなみに、submoduleで導入したパッケージの更新は
+&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt; $ git submodule foreach &amp;#39;git checkout 任意のバージョン/master&amp;#39;
+$ git submodule foreach &amp;#39;git pull&amp;#39;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+で一括更新ができます。&lt;br&gt;
+&lt;br&gt;
+これで楽しいGithub生活や楽しいFuelPHP開発生活をエンジョイできますね(笑)</content>
+  </entry>
+  <entry>
+    <title>Ruby環境の作り方</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2013/10/how_to_install_ruby_environment/"/>
+    <id>http://blog.url.com/blog/2013/10/how_to_install_ruby_environment/</id>
+    <published>2013-10-30T11:20:00Z</published>
+    <updated>2013-11-14T16:44:02+09:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">もりしーです。  
+この開発記録は&lt;a href="https://www.ruby-lang.org/ja/"&gt;Ruby&lt;/a&gt;製の&lt;a href="http://middlemanapp.com/http://middlemanapp.com/"&gt;Middleman&lt;/a&gt;によって作成されています。&lt;br&gt;
+従ってRubyが無ければ記録を残すことが出来ないので導入方法をまとめておきます。&lt;br&gt;
+
+
+1.必要なパッケージをインストールする&lt;br&gt;
+&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;$ su - 
+# apt-get install build-essential bison libreadline6-dev curl git-core zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev autoconf libncurses5-dev
+# exit
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+2.rbenvとruby-buildをgithubからクローンする
+&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;$ cd
+$ git clone git://github.com/sstephenson/rbenv.git .rbenv
+$ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+3.rbenvが使えるようにする  
+bashの場合は`~/.bashrc`、zshの場合は`~/.zshrc`に下記の項目を追記する  
+&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;  export PATH=&amp;quot;$HOME/.rbenv/bin:$PATH&amp;quot;&amp;lt;br&amp;gt;
+  eval &amp;quot;$(rbenv init -)&amp;quot;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;追記後に`source ~/.bashrc`もしくは`source ~/.zshrc`を実行する&lt;br&gt;
+&lt;br&gt;
+
+4.正常にrbenvの導入が出来ていれば、下記のように表示される
+&lt;pre class="highlight ruby"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;div class="lineno"&gt;4&lt;/div&gt;&lt;div class="lineno"&gt;5&lt;/div&gt;&lt;div class="lineno"&gt;6&lt;/div&gt;&lt;div class="lineno"&gt;7&lt;/div&gt;&lt;div class="lineno"&gt;8&lt;/div&gt;&lt;div class="lineno"&gt;9&lt;/div&gt;&lt;div class="lineno"&gt;10&lt;/div&gt;&lt;div class="lineno"&gt;11&lt;/div&gt;&lt;div class="lineno"&gt;12&lt;/div&gt;&lt;div class="lineno"&gt;13&lt;/div&gt;&lt;div class="lineno"&gt;14&lt;/div&gt;&lt;div class="lineno"&gt;15&lt;/div&gt;&lt;div class="lineno"&gt;16&lt;/div&gt;&lt;div class="lineno"&gt;17&lt;/div&gt;&lt;div class="lineno"&gt;18&lt;/div&gt;&lt;div class="lineno"&gt;19&lt;/div&gt;&lt;div class="lineno"&gt;20&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;  &lt;span class="vg"&gt;$rbenv&lt;/span&gt;
+  &lt;span class="n"&gt;rbenv&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;52&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;g1cc7536&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;ここは導入したバージョンによって変わる&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	&lt;span class="no"&gt;Usage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;rbenv&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;[&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;]&lt;/span&gt;
+
+	&lt;span class="no"&gt;Some&lt;/span&gt; &lt;span class="n"&gt;useful&lt;/span&gt; &lt;span class="n"&gt;rbenv&lt;/span&gt; &lt;span class="n"&gt;commands&lt;/span&gt; &lt;span class="ss"&gt;are:
+	   &lt;/span&gt;&lt;span class="n"&gt;commands&lt;/span&gt;    &lt;span class="no"&gt;List&lt;/span&gt; &lt;span class="n"&gt;all&lt;/span&gt; &lt;span class="n"&gt;available&lt;/span&gt; &lt;span class="n"&gt;rbenv&lt;/span&gt; &lt;span class="n"&gt;commands&lt;/span&gt;
+	   &lt;span class="n"&gt;local&lt;/span&gt;       &lt;span class="no"&gt;Set&lt;/span&gt; &lt;span class="n"&gt;or&lt;/span&gt; &lt;span class="n"&gt;show&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;local&lt;/span&gt; &lt;span class="n"&gt;application&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;specific&lt;/span&gt; &lt;span class="no"&gt;Ruby&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;
+	   &lt;span class="n"&gt;global&lt;/span&gt;      &lt;span class="no"&gt;Set&lt;/span&gt; &lt;span class="n"&gt;or&lt;/span&gt; &lt;span class="n"&gt;show&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;global&lt;/span&gt; &lt;span class="no"&gt;Ruby&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;
+	   &lt;span class="n"&gt;shell&lt;/span&gt;       &lt;span class="no"&gt;Set&lt;/span&gt; &lt;span class="n"&gt;or&lt;/span&gt; &lt;span class="n"&gt;show&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;specific&lt;/span&gt; &lt;span class="no"&gt;Ruby&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;
+	   &lt;span class="n"&gt;install&lt;/span&gt;     &lt;span class="no"&gt;Install&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="no"&gt;Ruby&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="n"&gt;using&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;ruby&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;build&lt;/span&gt; &lt;span class="n"&gt;plugin&lt;/span&gt;
+	   &lt;span class="n"&gt;uninstall&lt;/span&gt;   &lt;span class="no"&gt;Uninstall&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;specific&lt;/span&gt; &lt;span class="no"&gt;Ruby&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;
+	   &lt;span class="n"&gt;rehash&lt;/span&gt;      &lt;span class="no"&gt;Rehash&lt;/span&gt; &lt;span class="n"&gt;rbenv&lt;/span&gt; &lt;span class="n"&gt;shims&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;after&lt;/span&gt; &lt;span class="n"&gt;installing&lt;/span&gt; &lt;span class="n"&gt;executables&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+	   &lt;span class="n"&gt;version&lt;/span&gt;     &lt;span class="no"&gt;Show&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;current&lt;/span&gt; &lt;span class="no"&gt;Ruby&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;its&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt;
+	   &lt;span class="n"&gt;versions&lt;/span&gt;    &lt;span class="no"&gt;List&lt;/span&gt; &lt;span class="n"&gt;all&lt;/span&gt; &lt;span class="no"&gt;Ruby&lt;/span&gt; &lt;span class="n"&gt;versions&lt;/span&gt; &lt;span class="n"&gt;available&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;rbenv&lt;/span&gt;
+	   &lt;span class="n"&gt;which&lt;/span&gt;       &lt;span class="no"&gt;Display&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;full&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;an&lt;/span&gt; &lt;span class="n"&gt;executable&lt;/span&gt;
+	   &lt;span class="n"&gt;whence&lt;/span&gt;      &lt;span class="no"&gt;List&lt;/span&gt; &lt;span class="n"&gt;all&lt;/span&gt; &lt;span class="no"&gt;Ruby&lt;/span&gt; &lt;span class="n"&gt;versions&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;contain&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;given&lt;/span&gt; &lt;span class="n"&gt;executable&lt;/span&gt;
+
+	&lt;span class="no"&gt;See&lt;/span&gt; &lt;span class="sb"&gt;`rbenv help &amp;lt;command&amp;gt;&amp;#39; for information on a specific command.
+	For full documentation, see: https://github.com/sstephenson/rbenv#readme
+&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+5.導入可能Rubyのバージョンを調べる  
+&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;  $ rbenv install --list
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;とすると導入可能なRubyのバージョン一覧が表示される。(大量に有るので一部省略)  
+&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;div class="lineno"&gt;4&lt;/div&gt;&lt;div class="lineno"&gt;5&lt;/div&gt;&lt;div class="lineno"&gt;6&lt;/div&gt;&lt;div class="lineno"&gt;7&lt;/div&gt;&lt;div class="lineno"&gt;8&lt;/div&gt;&lt;div class="lineno"&gt;9&lt;/div&gt;&lt;div class="lineno"&gt;10&lt;/div&gt;&lt;div class="lineno"&gt;11&lt;/div&gt;&lt;div class="lineno"&gt;12&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;	Available versions:
+  ~ 省略 ~
+  1.9.3-p448
+  1.9.3-preview1
+  1.9.3-rc1
+  2.0.0-p195
+  2.0.0-p247
+  2.0.0-preview2
+  2.0.0-rc2
+  2.1.0-dev
+  2.1.0-preview1
+  ~ 省略 ~
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+6.Rubyをインストールする
+特に指定がなければ&lt;code&gt;-rc&lt;/code&gt;や&lt;code&gt;-dev&lt;/code&gt;、&lt;code&gt;-preview&lt;/code&gt;ではない最新の安定板を入れましょう。  
+&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;	$ rbenv install 2.0.0-p247
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;インストールには少し時間がかかります。&lt;br&gt;
+ちなみにRaspberry Piでは３時間かかります。&lt;br&gt;
+&lt;br&gt;
+
+7.rbenvでインストールしたRubyを読ませる。  
+&lt;pre class="highlight text"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;div class="lineno"&gt;4&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;  $ rbenv rehash&amp;lt;br&amp;gt;
+  $ rbenv global 2.0.0-p247&amp;lt;br&amp;gt;
+  $ ruby --version&amp;lt;br&amp;gt;
+  ruby 2.0.0p247 (2013-06-27 revision 41674) [x86_64-darwin12.4.0]&amp;lt;br&amp;gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt;
+これでRubyのインストール完了です。&lt;br&gt;
+Rubyに興味が有るなら、こちらのコミュニティをおすすめします。&lt;br&gt;
+&lt;a href="http://hiroshimarb.github.io/"&gt;広島Ruby勉強会&lt;/a&gt;&lt;br&gt;
+&lt;br&gt;
+もしrbenvやruby-buildを更新したい場合は該当ディレクトリに移動し&lt;code&gt;git pull&lt;/code&gt;して&lt;code&gt;source ~/.bashrc&lt;/code&gt;もしくは&lt;code&gt;source ~/.zshrc&lt;/code&gt;を実行すると更新されます。  
+&lt;br&gt;
+&lt;br&gt;
+追伸  
+記録を書くときに&lt;code&gt;bundle install&lt;/code&gt;を実行しますが、実行時間を短くする小技としては  
+&lt;code&gt;~/.gemrc&lt;/code&gt;ファイルを作成し、&lt;code&gt;gem: --no-ri --no-rdoc&lt;/code&gt;と書いておくとよいでしょう。  </content>
+  </entry>
+</feed>
