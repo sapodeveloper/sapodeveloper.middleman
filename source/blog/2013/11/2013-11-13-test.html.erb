@@ -1,0 +1,53 @@
+---
+auther: ミー
+title: "PHPの復習"
+date: 2013-11-13 15:32
+tags: FuelPHP,  PHP
+---
+
+ミーです。<br>
+本格的な作業開始の前にPHPの復習しときます。<br>
+<br>
+～PHP基本～<br>
+注：あくまで私の確認作業です。アテになりません。はい。<br>
+<br>
+テキストボックス＆クリックボタン
+<form>
+<input type="text" name="name" size="40">
+<br>
+<input type="submit" value="ココ">
+</form>
+コードは下記
+<% code("ruby") do %>
+<form>
+<input type="text" name="text" size="40">
+<br>
+<input type="submit" value="ココ"></form>
+<% end %> 
+実際はもっと複雑ですがここではあっさりと。ログインページでは必須な機能です。<br>
+<br>
+セレクトフォーム<br>
+<select	 name	 =	 “select”>
+<option>09:00-10:30</option>
+<option>10:45-12:15</option>
+<option>13:15-14:45</option>
+<option>15:00-16:30</option>
+<option>16:45-18:15</option>
+</select><br>
+コードは下記
+<% code("ruby") do %>
+<select	 name	 =	 “select”>
+<option>09:00-10:30</option>
+<option>10:45-12:15</option>
+<option>13:15-14:45</option>
+<option>15:00-16:30</option>
+<option>16:45-18:15</option>
+</select>
+<% end %> 
+例として講義時間の選択を製作。使い道はある。<br>
+<br>
+この他にも表の表示、データの送信、リンクを貼るといった機能があり、<br>
+これらの組み合わせでシステムのページを作ってます。<br>
+実際にソースを見たいなら、ツールバー～表示～ソースで見れます。正直分かりませんが。<br>
+<br>
+ではでは今回はここまで。次回は実際にページを作ってみたいと思います。<br>
