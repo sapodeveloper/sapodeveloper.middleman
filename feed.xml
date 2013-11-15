@@ -5,16 +5,82 @@
   <id>http://blog.url.com/blog/:year/:month</id>
   <link href="http://blog.url.com/blog/:year/:month"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
+<<<<<<< HEAD
   <updated>2013-11-12T13:48:00Z</updated>
+=======
+  <updated>2013-11-13T06:32:00Z</updated>
+>>>>>>> 91a41ee43cd14127b7f98a4db2c43dd42671c5df
   <author>
     <name>Blog Author</name>
   </author>
   <entry>
+<<<<<<< HEAD
+=======
+    <title>PHPの復習</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2013/11/test/"/>
+    <id>http://blog.url.com/blog/2013/11/test/</id>
+    <published>2013-11-13T06:32:00Z</published>
+    <updated>2013-11-14T14:47:13+09:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">ミーです。&lt;br&gt;
+本格的な作業開始の前にPHPの復習しときます。&lt;br&gt;
+&lt;br&gt;
+～PHP基本～&lt;br&gt;
+注：あくまで私の確認作業です。アテになりません。はい。&lt;br&gt;
+&lt;br&gt;
+テキストボックス＆クリックボタン
+&lt;form&gt;
+&lt;input type="text" name="name" size="40"&gt;
+&lt;br&gt;
+&lt;input type="submit" value="ココ"&gt;
+&lt;/form&gt;
+コードは下記
+&lt;pre class="highlight ruby"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;div class="lineno"&gt;4&lt;/div&gt;&lt;div class="lineno"&gt;5&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;form&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;input&lt;/span&gt; &lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;text&amp;quot;&lt;/span&gt; &lt;span class="nb"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;text&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;40&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;br&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;input&lt;/span&gt; &lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;submit&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ココ&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="sr"&gt;/form&amp;gt;
+&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt; 
+実際はもっと複雑ですがここではあっさりと。ログインページでは必須な機能です。&lt;br&gt;
+&lt;br&gt;
+セレクトフォーム&lt;br&gt;
+&lt;select	 name	 =	 “select”&gt;
+&lt;option&gt;09:00-10:30&lt;/option&gt;
+&lt;option&gt;10:45-12:15&lt;/option&gt;
+&lt;option&gt;13:15-14:45&lt;/option&gt;
+&lt;option&gt;15:00-16:30&lt;/option&gt;
+&lt;option&gt;16:45-18:15&lt;/option&gt;
+&lt;/select&gt;&lt;br&gt;
+コードは下記
+&lt;pre class="highlight ruby"&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="gutter gl"&gt;&lt;div class="lineno"&gt;1&lt;/div&gt;&lt;div class="lineno"&gt;2&lt;/div&gt;&lt;div class="lineno"&gt;3&lt;/div&gt;&lt;div class="lineno"&gt;4&lt;/div&gt;&lt;div class="lineno"&gt;5&lt;/div&gt;&lt;div class="lineno"&gt;6&lt;/div&gt;&lt;div class="lineno"&gt;7&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nb"&gt;select&lt;/span&gt;	 &lt;span class="nb"&gt;name&lt;/span&gt;	 &lt;span class="o"&gt;=&lt;/span&gt;	 &lt;span class="err"&gt;“&lt;/span&gt;&lt;span class="nb"&gt;select&lt;/span&gt;&lt;span class="err"&gt;”&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;09&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mo"&gt;00&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="sr"&gt;/option&amp;gt;
+&amp;lt;option&amp;gt;10:45-12:15&amp;lt;/o&lt;/span&gt;&lt;span class="n"&gt;ption&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;45&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="sr"&gt;/option&amp;gt;
+&amp;lt;option&amp;gt;15:00-16:30&amp;lt;/o&lt;/span&gt;&lt;span class="n"&gt;ption&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;45&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="sr"&gt;/option&amp;gt;
+&amp;lt;/se&lt;/span&gt;&lt;span class="n"&gt;lect&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/pre&gt; 
+例として講義時間の選択を製作。使い道はある。&lt;br&gt;
+&lt;br&gt;
+この他にも表の表示、データの送信、リンクを貼るといった機能があり、&lt;br&gt;
+これらの組み合わせでシステムのページを作ってます。&lt;br&gt;
+実際にソースを見たいなら、ツールバー～表示～ソースで見れます。正直分かりませんが。&lt;br&gt;
+&lt;br&gt;
+ではでは今回はここまで。次回は実際にページを作ってみたいと思います。&lt;br&gt;
+</content>
+  </entry>
+  <entry>
+>>>>>>> 91a41ee43cd14127b7f98a4db2c43dd42671c5df
     <title>Ormauthを導入する</title>
     <link rel="alternate" href="http://blog.url.com/blog/2013/11/how_to_use_ormauth/"/>
     <id>http://blog.url.com/blog/2013/11/how_to_use_ormauth/</id>
     <published>2013-11-12T13:48:00Z</published>
+<<<<<<< HEAD
     <updated>2013-11-12T23:07:45+09:00</updated>
+=======
+    <updated>2013-11-14T16:44:02+09:00</updated>
+>>>>>>> 91a41ee43cd14127b7f98a4db2c43dd42671c5df
     <author>
       <name>Article Author</name>
     </author>
@@ -60,7 +126,11 @@ Ormauthとは&lt;a href="http://fuelphp.com/"&gt;FuelPHP&lt;/a&gt;で利用で�
     <link rel="alternate" href="http://blog.url.com/blog/2013/11/how_to_stand_by_fuelphp/"/>
     <id>http://blog.url.com/blog/2013/11/how_to_stand_by_fuelphp/</id>
     <published>2013-11-12T13:15:00Z</published>
+<<<<<<< HEAD
     <updated>2013-11-12T23:10:22+09:00</updated>
+=======
+    <updated>2013-11-14T16:44:02+09:00</updated>
+>>>>>>> 91a41ee43cd14127b7f98a4db2c43dd42671c5df
     <author>
       <name>Article Author</name>
     </author>
@@ -128,7 +198,11 @@ $ git submodule foreach &amp;#39;git pull&amp;#39;&lt;/td&gt;&lt;/tr&gt;&lt;/tbo
     <link rel="alternate" href="http://blog.url.com/blog/2013/10/how_to_install_ruby_environment/"/>
     <id>http://blog.url.com/blog/2013/10/how_to_install_ruby_environment/</id>
     <published>2013-10-30T11:20:00Z</published>
+<<<<<<< HEAD
     <updated>2013-10-31T16:11:07+09:00</updated>
+=======
+    <updated>2013-11-14T16:44:02+09:00</updated>
+>>>>>>> 91a41ee43cd14127b7f98a4db2c43dd42671c5df
     <author>
       <name>Article Author</name>
     </author>
