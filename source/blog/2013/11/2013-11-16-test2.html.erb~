@@ -1,0 +1,27 @@
+---
+auther: ミー 
+title: "PHPの復習２"
+date: 2013-11-16 11:40
+tags: FuelPHP, PHP
+---
+
+なぁーんで更新できないんでしょうね？嫌われてる？<br>
+と思いながら書いてます。はい。<br>
+まぁ、前回の宣言通り簡単にサイトを作ります。<br>
+お題は「シフト管理システム（仮）」です。<br>
+現在運営・開発中のものの大枠を真似て作ってみます。<br>
+<br>
+まずはログインページです。<br>
+認証機能は技術不足で省いてますがその他の機能は備えてます。<br>
+<br>
+<form>
+名前：
+<input type="text" name="name" size="20">
+<br>
+パス：
+<input type="password" name="pass" size="20">
+<br>
+<input type="button" value="ログイン" onclick="">
+</form>
+<br>
+じゃぁ、ログイン（仮）して進みましょー。<br>
