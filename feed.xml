@@ -5,10 +5,41 @@
   <id>http://blog.url.com/blog/:year/:month</id>
   <link href="http://blog.url.com/blog/:year/:month"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2013-11-13T06:32:00Z</updated>
+  <updated>2013-11-16T02:40:00Z</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>PHPの復習２</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2013/11/test2/"/>
+    <id>http://blog.url.com/blog/2013/11/test2/</id>
+    <published>2013-11-16T02:40:00Z</published>
+    <updated>2013-11-16T12:41:36+09:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">なぁーんで更新できないんでしょうね？嫌われてる？&lt;br&gt;
+と思いながら書いてます。はい。&lt;br&gt;
+まぁ、前回の宣言通り簡単にサイトを作ります。&lt;br&gt;
+お題は「シフト管理システム（仮）」です。&lt;br&gt;
+現在運営・開発中のものの大枠を真似て作ってみます。&lt;br&gt;
+&lt;br&gt;
+まずはログインページです。&lt;br&gt;
+認証機能は技術不足で省いてますがその他の機能は備えてます。&lt;br&gt;
+&lt;br&gt;
+&lt;form&gt;
+名前：
+&lt;input type="text" name="name" size="20"&gt;
+&lt;br&gt;
+パス：
+&lt;input type="password" name="pass" size="20"&gt;
+&lt;br&gt;
+&lt;input type="button" value="ログイン" onclick=""&gt;
+&lt;/form&gt;
+&lt;br&gt;
+じゃぁ、ログイン（仮）して進みましょー。&lt;br&gt;
+</content>
+  </entry>
   <entry>
     <title>PHPの復習</title>
     <link rel="alternate" href="http://blog.url.com/blog/2013/11/test/"/>
