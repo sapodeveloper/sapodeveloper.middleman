@@ -3,6 +3,7 @@
 ## sapodeveloper.middlemanにpushできるようにする
 task :setup do
 	sh 'bundle install'
+  sh 'git remote set-url origin git@github.com:sapodeveloper/sapodeveloper.github.io.git'
 	sh 'git remote add middleman git@github.com:sapodeveloper/sapodeveloper.middleman.git'
 end
 
