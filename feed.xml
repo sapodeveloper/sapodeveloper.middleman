@@ -14,17 +14,17 @@
     <link rel="alternate" href="http://blog.url.com/blog/2013/11/test2/"/>
     <id>http://blog.url.com/blog/2013/11/test2/</id>
     <published>2013-11-16T02:40:00Z</published>
-    <updated>2013-11-16T12:41:36+09:00</updated>
+    <updated>2013-11-17T11:31:13+09:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">なぁーんで更新できないんでしょうね？嫌われてる？&lt;br&gt;
+    <content type="html">なぁーんで更新できなかったんでしょうね？嫌われてる？&lt;br&gt;
 と思いながら書いてます。はい。&lt;br&gt;
 まぁ、前回の宣言通り簡単にサイトを作ります。&lt;br&gt;
 お題は「シフト管理システム（仮）」です。&lt;br&gt;
 現在運営・開発中のものの大枠を真似て作ってみます。&lt;br&gt;
 &lt;br&gt;
-まずはログインページです。&lt;br&gt;
+1.まずはログインページです。&lt;br&gt;
 認証機能は技術不足で省いてますがその他の機能は備えてます。&lt;br&gt;
 &lt;br&gt;
 &lt;form&gt;
@@ -36,8 +36,91 @@
 &lt;br&gt;
 &lt;input type="button" value="ログイン" onclick=""&gt;
 &lt;/form&gt;
+&lt;br&gt;&lt;br&gt;
+2.ログインしたらトップページです。&lt;br&gt;
+ここからシフト入力画面・シフト確認画面・個人設定画面に移動します。&lt;br&gt;
+入力ー＞　3.　確認ー＞　4.　個人設定ー＞　5.&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+3.シフト入力画面です。&lt;br&gt;
+ページの都合で必要最低限のものになりましたが、これを組み合わせて作ります。&lt;br&gt;
+&lt;form&gt;
+シフト入力欄&lt;br&gt;
+開始：
+&lt;select name=“select”&gt;
+&lt;option&gt;13:15&lt;/option&gt;
+&lt;option&gt;13:30&lt;/option&gt;
+&lt;option&gt;13:45&lt;/option&gt;
+&lt;option&gt;14:00&lt;/option&gt;
+&lt;option&gt;14:15&lt;/option&gt;
+&lt;option&gt;14:30&lt;/option&gt;
+&lt;option&gt;14:45&lt;/option&gt;
+&lt;option&gt;15:00&lt;/option&gt;
+&lt;option&gt;15:15&lt;/option&gt;
+&lt;option&gt;15:30&lt;/option&gt;
+&lt;option&gt;15:45&lt;/option&gt;
+&lt;option&gt;16:00&lt;/option&gt;
+&lt;option&gt;16:15&lt;/option&gt;
+&lt;option&gt;16:30&lt;/option&gt;
+&lt;option&gt;16:45&lt;/option&gt;
+&lt;option&gt;17:00&lt;/option&gt;
+&lt;option&gt;17:15&lt;/option&gt;
+&lt;option&gt;17:30&lt;/option&gt;
+&lt;option&gt;17:45&lt;/option&gt;
+&lt;option&gt;18:00&lt;/option&gt;
+&lt;option&gt;18:15&lt;/option&gt;
+&lt;option&gt;18:30&lt;/option&gt;
+&lt;option&gt;18:45&lt;/option&gt;
+&lt;option&gt;19:00&lt;/option&gt;
+&lt;/select&gt;
 &lt;br&gt;
-じゃぁ、ログイン（仮）して進みましょー。&lt;br&gt;
+終了：
+&lt;select name=“select”&gt;
+&lt;option&gt;13:15&lt;/option&gt;
+&lt;option&gt;13:30&lt;/option&gt;
+&lt;option&gt;13:45&lt;/option&gt;
+&lt;option&gt;14:00&lt;/option&gt;
+&lt;option&gt;14:15&lt;/option&gt;
+&lt;option&gt;14:30&lt;/option&gt;
+&lt;option&gt;14:45&lt;/option&gt;
+&lt;option&gt;15:00&lt;/option&gt;
+&lt;option&gt;15:15&lt;/option&gt;
+&lt;option&gt;15:30&lt;/option&gt;
+&lt;option&gt;15:45&lt;/option&gt;
+&lt;option&gt;16:00&lt;/option&gt;
+&lt;option&gt;16:15&lt;/option&gt;
+&lt;option&gt;16:30&lt;/option&gt;
+&lt;option&gt;16:45&lt;/option&gt;
+&lt;option&gt;17:00&lt;/option&gt;
+&lt;option&gt;17:15&lt;/option&gt;
+&lt;option&gt;17:30&lt;/option&gt;
+&lt;option&gt;17:45&lt;/option&gt;
+&lt;option&gt;18:00&lt;/option&gt;
+&lt;option&gt;18:15&lt;/option&gt;
+&lt;option&gt;18:30&lt;/option&gt;
+&lt;option&gt;18:45&lt;/option&gt;
+&lt;option&gt;19:00&lt;/option&gt;
+&lt;/select&gt;
+&lt;form&gt;
+&lt;input type="button" value="申請" onclick=""&gt;
+&lt;/form&gt;
+&lt;br&gt;&lt;br&gt;
+4.シフト確認画面です。&lt;br&gt;
+こちらも必要最低限で作ってあります。&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+5.個人設定画面です。&lt;br&gt;
+ログインしているユーザ名の表示とパスワード変更機能しかありませんが、&lt;br&gt;
+今後新しい機能が追加されるかもしれません。&lt;br&gt;
+&lt;form&gt;名前：
+名前：（ユーザ名）&lt;br&gt;
+現在のパスワード&lt;input type="password" name="pass" size="20"&gt;&lt;br&gt;
+新しいパスワード&lt;input type="password" name="pass" size="20"&gt;&lt;br&gt;
+&lt;input type="button" value="変更" onclick=""&gt;
+&lt;/form&gt;
+&lt;br&gt;&lt;br&gt;
+以上が「シフト管理システム（仮）」の大まかな枠組みです。&lt;br&gt;
+大まか過ぎるので、ここから大きく変わります。&lt;br&gt;
+そろそろページが大きくなりすぎるので終わらせていただきます。&lt;br&gt;
+ではでは。
 </content>
   </entry>
   <entry>

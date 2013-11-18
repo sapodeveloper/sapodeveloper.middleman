@@ -29,13 +29,13 @@
           <div id="main" role="main">
             <div class="uk-panel uk-panel-box uk-panel-header">
               <h2 class="uk-panel-title">PHPの復習２</h2>
-              <p>なぁーんで更新できないんでしょうね？嫌われてる？<br>
+              <p>なぁーんで更新できなかったんでしょうね？嫌われてる？<br>
 と思いながら書いてます。はい。<br>
 まぁ、前回の宣言通り簡単にサイトを作ります。<br>
 お題は「シフト管理システム（仮）」です。<br>
 現在運営・開発中のものの大枠を真似て作ってみます。<br>
 <br>
-まずはログインページです。<br>
+1.まずはログインページです。<br>
 認証機能は技術不足で省いてますがその他の機能は備えてます。<br>
 <br>
 <form>
@@ -47,8 +47,91 @@
 <br>
 <input type="button" value="ログイン" onclick="">
 </form>
+<br><br>
+2.ログインしたらトップページです。<br>
+ここからシフト入力画面・シフト確認画面・個人設定画面に移動します。<br>
+入力ー＞　3.　確認ー＞　4.　個人設定ー＞　5.<br>
+<br><br>
+3.シフト入力画面です。<br>
+ページの都合で必要最低限のものになりましたが、これを組み合わせて作ります。<br>
+<form>
+シフト入力欄<br>
+開始：
+<select name=“select”>
+<option>13:15</option>
+<option>13:30</option>
+<option>13:45</option>
+<option>14:00</option>
+<option>14:15</option>
+<option>14:30</option>
+<option>14:45</option>
+<option>15:00</option>
+<option>15:15</option>
+<option>15:30</option>
+<option>15:45</option>
+<option>16:00</option>
+<option>16:15</option>
+<option>16:30</option>
+<option>16:45</option>
+<option>17:00</option>
+<option>17:15</option>
+<option>17:30</option>
+<option>17:45</option>
+<option>18:00</option>
+<option>18:15</option>
+<option>18:30</option>
+<option>18:45</option>
+<option>19:00</option>
+</select>
 <br>
-じゃぁ、ログイン（仮）して進みましょー。<br>
+終了：
+<select name=“select”>
+<option>13:15</option>
+<option>13:30</option>
+<option>13:45</option>
+<option>14:00</option>
+<option>14:15</option>
+<option>14:30</option>
+<option>14:45</option>
+<option>15:00</option>
+<option>15:15</option>
+<option>15:30</option>
+<option>15:45</option>
+<option>16:00</option>
+<option>16:15</option>
+<option>16:30</option>
+<option>16:45</option>
+<option>17:00</option>
+<option>17:15</option>
+<option>17:30</option>
+<option>17:45</option>
+<option>18:00</option>
+<option>18:15</option>
+<option>18:30</option>
+<option>18:45</option>
+<option>19:00</option>
+</select>
+<form>
+<input type="button" value="申請" onclick="">
+</form>
+<br><br>
+4.シフト確認画面です。<br>
+こちらも必要最低限で作ってあります。<br>
+<br><br>
+5.個人設定画面です。<br>
+ログインしているユーザ名の表示とパスワード変更機能しかありませんが、<br>
+今後新しい機能が追加されるかもしれません。<br>
+<form>名前：
+名前：（ユーザ名）<br>
+現在のパスワード<input type="password" name="pass" size="20"><br>
+新しいパスワード<input type="password" name="pass" size="20"><br>
+<input type="button" value="変更" onclick="">
+</form>
+<br><br>
+以上が「シフト管理システム（仮）」の大まかな枠組みです。<br>
+大まか過ぎるので、ここから大きく変わります。<br>
+そろそろページが大きくなりすぎるので終わらせていただきます。<br>
+ではでは。
 </p>
               <hr>
               Posted by ミー<br />
