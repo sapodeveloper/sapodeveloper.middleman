@@ -26,11 +26,12 @@
     <link rel="alternate" href="http://blog.url.com/blog/2013/11/test2/"/>
     <id>http://blog.url.com/blog/2013/11/test2/</id>
     <published>2013-11-16T02:40:00Z</published>
-    <updated>2013-11-17T11:31:13+09:00</updated>
+    <updated>2013-11-19T15:42:10+09:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">なぁーんで更新できなかったんでしょうね？嫌われてる？&lt;br&gt;
+    <content type="html">ミーです。&lt;br&gt;
+なぁーんで更新できなかったんでしょうね？嫌われてる？&lt;br&gt;
 と思いながら書いてます。はい。&lt;br&gt;
 まぁ、前回の宣言通り簡単にサイトを作ります。&lt;br&gt;
 お題は「シフト管理システム（仮）」です。&lt;br&gt;
@@ -118,11 +119,33 @@
 &lt;br&gt;&lt;br&gt;
 4.シフト確認画面です。&lt;br&gt;
 こちらも必要最低限で作ってあります。&lt;br&gt;
+&lt;table border="1" width="500" cellspacing="0" cellpadding="5" bordercolor="#333333"&gt;
+&lt;tr&gt;
+&lt;th&gt;スタッフ名&lt;/th&gt;
+&lt;th&gt;開始時間&lt;/th&gt;
+&lt;th&gt;終了時刻&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;あか&lt;/th&gt;
+&lt;th&gt;13:15&lt;/th&gt;
+&lt;th&gt;15:00&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;あお&lt;/th&gt;
+&lt;th&gt;15:00&lt;/th&gt;
+&lt;th&gt;16:45&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;き&lt;/th&gt;
+&lt;th&gt;16:45&lt;/th&gt;
+&lt;th&gt;19:00&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
 &lt;br&gt;&lt;br&gt;
 5.個人設定画面です。&lt;br&gt;
 ログインしているユーザ名の表示とパスワード変更機能しかありませんが、&lt;br&gt;
 今後新しい機能が追加されるかもしれません。&lt;br&gt;
-&lt;form&gt;名前：
+&lt;form&gt;
 名前：（ユーザ名）&lt;br&gt;
 現在のパスワード&lt;input type="password" name="pass" size="20"&gt;&lt;br&gt;
 新しいパスワード&lt;input type="password" name="pass" size="20"&gt;&lt;br&gt;
