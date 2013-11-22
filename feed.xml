@@ -5,23 +5,11 @@
   <id>http://blog.url.com/blog/:year/:month</id>
   <link href="http://blog.url.com/blog/:year/:month"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <updated>2013-11-12T13:48:00Z</updated>
-=======
-  <updated>2013-11-13T06:32:00Z</updated>
->>>>>>> 91a41ee43cd14127b7f98a4db2c43dd42671c5df
-=======
   <updated>2013-11-16T02:40:00Z</updated>
->>>>>>> 38f967c1df8e40fefa4500f885c9961543339fd5
   <author>
     <name>Blog Author</name>
   </author>
   <entry>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
     <title>PHPの復習２</title>
     <link rel="alternate" href="http://blog.url.com/blog/2013/11/test2/"/>
     <id>http://blog.url.com/blog/2013/11/test2/</id>
@@ -159,7 +147,11 @@
 </content>
   </entry>
   <entry>
+<<<<<<< HEAD
 >>>>>>> 38f967c1df8e40fefa4500f885c9961543339fd5
+=======
+>>>>>>> c0a838c4decf43ca6a009da893c080f8655de4ec
+>>>>>>> 4dfe7769c4472d8d5aaa717925e0051ddb1ad6f2
     <title>PHPの復習</title>
     <link rel="alternate" href="http://blog.url.com/blog/2013/11/test/"/>
     <id>http://blog.url.com/blog/2013/11/test/</id>
