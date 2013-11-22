@@ -6,16 +6,160 @@
   <link href="http://blog.url.com/blog/:year/:month"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <updated>2013-11-12T13:48:00Z</updated>
 =======
   <updated>2013-11-13T06:32:00Z</updated>
 >>>>>>> 91a41ee43cd14127b7f98a4db2c43dd42671c5df
+=======
+  <updated>2013-11-16T02:40:00Z</updated>
+>>>>>>> 38f967c1df8e40fefa4500f885c9961543339fd5
   <author>
     <name>Blog Author</name>
   </author>
   <entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+    <title>PHPの復習２</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2013/11/test2/"/>
+    <id>http://blog.url.com/blog/2013/11/test2/</id>
+    <published>2013-11-16T02:40:00Z</published>
+    <updated>2013-11-19T15:42:10+09:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">ミーです。&lt;br&gt;
+なぁーんで更新できなかったんでしょうね？嫌われてる？&lt;br&gt;
+と思いながら書いてます。はい。&lt;br&gt;
+まぁ、前回の宣言通り簡単にサイトを作ります。&lt;br&gt;
+お題は「シフト管理システム（仮）」です。&lt;br&gt;
+現在運営・開発中のものの大枠を真似て作ってみます。&lt;br&gt;
+&lt;br&gt;
+1.まずはログインページです。&lt;br&gt;
+認証機能は技術不足で省いてますがその他の機能は備えてます。&lt;br&gt;
+&lt;br&gt;
+&lt;form&gt;
+名前：
+&lt;input type="text" name="name" size="20"&gt;
+&lt;br&gt;
+パス：
+&lt;input type="password" name="pass" size="20"&gt;
+&lt;br&gt;
+&lt;input type="button" value="ログイン" onclick=""&gt;
+&lt;/form&gt;
+&lt;br&gt;&lt;br&gt;
+2.ログインしたらトップページです。&lt;br&gt;
+ここからシフト入力画面・シフト確認画面・個人設定画面に移動します。&lt;br&gt;
+入力ー＞　3.　確認ー＞　4.　個人設定ー＞　5.&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+3.シフト入力画面です。&lt;br&gt;
+ページの都合で必要最低限のものになりましたが、これを組み合わせて作ります。&lt;br&gt;
+&lt;form&gt;
+シフト入力欄&lt;br&gt;
+開始：
+&lt;select name=“select”&gt;
+&lt;option&gt;13:15&lt;/option&gt;
+&lt;option&gt;13:30&lt;/option&gt;
+&lt;option&gt;13:45&lt;/option&gt;
+&lt;option&gt;14:00&lt;/option&gt;
+&lt;option&gt;14:15&lt;/option&gt;
+&lt;option&gt;14:30&lt;/option&gt;
+&lt;option&gt;14:45&lt;/option&gt;
+&lt;option&gt;15:00&lt;/option&gt;
+&lt;option&gt;15:15&lt;/option&gt;
+&lt;option&gt;15:30&lt;/option&gt;
+&lt;option&gt;15:45&lt;/option&gt;
+&lt;option&gt;16:00&lt;/option&gt;
+&lt;option&gt;16:15&lt;/option&gt;
+&lt;option&gt;16:30&lt;/option&gt;
+&lt;option&gt;16:45&lt;/option&gt;
+&lt;option&gt;17:00&lt;/option&gt;
+&lt;option&gt;17:15&lt;/option&gt;
+&lt;option&gt;17:30&lt;/option&gt;
+&lt;option&gt;17:45&lt;/option&gt;
+&lt;option&gt;18:00&lt;/option&gt;
+&lt;option&gt;18:15&lt;/option&gt;
+&lt;option&gt;18:30&lt;/option&gt;
+&lt;option&gt;18:45&lt;/option&gt;
+&lt;option&gt;19:00&lt;/option&gt;
+&lt;/select&gt;
+&lt;br&gt;
+終了：
+&lt;select name=“select”&gt;
+&lt;option&gt;13:15&lt;/option&gt;
+&lt;option&gt;13:30&lt;/option&gt;
+&lt;option&gt;13:45&lt;/option&gt;
+&lt;option&gt;14:00&lt;/option&gt;
+&lt;option&gt;14:15&lt;/option&gt;
+&lt;option&gt;14:30&lt;/option&gt;
+&lt;option&gt;14:45&lt;/option&gt;
+&lt;option&gt;15:00&lt;/option&gt;
+&lt;option&gt;15:15&lt;/option&gt;
+&lt;option&gt;15:30&lt;/option&gt;
+&lt;option&gt;15:45&lt;/option&gt;
+&lt;option&gt;16:00&lt;/option&gt;
+&lt;option&gt;16:15&lt;/option&gt;
+&lt;option&gt;16:30&lt;/option&gt;
+&lt;option&gt;16:45&lt;/option&gt;
+&lt;option&gt;17:00&lt;/option&gt;
+&lt;option&gt;17:15&lt;/option&gt;
+&lt;option&gt;17:30&lt;/option&gt;
+&lt;option&gt;17:45&lt;/option&gt;
+&lt;option&gt;18:00&lt;/option&gt;
+&lt;option&gt;18:15&lt;/option&gt;
+&lt;option&gt;18:30&lt;/option&gt;
+&lt;option&gt;18:45&lt;/option&gt;
+&lt;option&gt;19:00&lt;/option&gt;
+&lt;/select&gt;
+&lt;form&gt;
+&lt;input type="button" value="申請" onclick=""&gt;
+&lt;/form&gt;
+&lt;br&gt;&lt;br&gt;
+4.シフト確認画面です。&lt;br&gt;
+こちらも必要最低限で作ってあります。&lt;br&gt;
+&lt;table border="1" width="500" cellspacing="0" cellpadding="5" bordercolor="#333333"&gt;
+&lt;tr&gt;
+&lt;th&gt;スタッフ名&lt;/th&gt;
+&lt;th&gt;開始時間&lt;/th&gt;
+&lt;th&gt;終了時刻&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;あか&lt;/th&gt;
+&lt;th&gt;13:15&lt;/th&gt;
+&lt;th&gt;15:00&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;あお&lt;/th&gt;
+&lt;th&gt;15:00&lt;/th&gt;
+&lt;th&gt;16:45&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;き&lt;/th&gt;
+&lt;th&gt;16:45&lt;/th&gt;
+&lt;th&gt;19:00&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br&gt;&lt;br&gt;
+5.個人設定画面です。&lt;br&gt;
+ログインしているユーザ名の表示とパスワード変更機能しかありませんが、&lt;br&gt;
+今後新しい機能が追加されるかもしれません。&lt;br&gt;
+&lt;form&gt;
+名前：（ユーザ名）&lt;br&gt;
+現在のパスワード&lt;input type="password" name="pass" size="20"&gt;&lt;br&gt;
+新しいパスワード&lt;input type="password" name="pass" size="20"&gt;&lt;br&gt;
+&lt;input type="button" value="変更" onclick=""&gt;
+&lt;/form&gt;
+&lt;br&gt;&lt;br&gt;
+以上が「シフト管理システム（仮）」の大まかな枠組みです。&lt;br&gt;
+大まか過ぎるので、ここから大きく変わります。&lt;br&gt;
+そろそろページが大きくなりすぎるので終わらせていただきます。&lt;br&gt;
+ではでは。
+</content>
+  </entry>
+  <entry>
+>>>>>>> 38f967c1df8e40fefa4500f885c9961543339fd5
     <title>PHPの復習</title>
     <link rel="alternate" href="http://blog.url.com/blog/2013/11/test/"/>
     <id>http://blog.url.com/blog/2013/11/test/</id>
