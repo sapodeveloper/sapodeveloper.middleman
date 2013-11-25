@@ -1,0 +1,69 @@
+---
+auther: 
+title: "MVC２"
+date: 2013-11-23 20:44
+tags: MVC
+---
+
+ミーです。<br>
+立て続けに書くと内容がアレになってきますが、どうにか乗り越えます。<br>
+<br>
+さて今回は前回の続きでMVCについてやっていきましょう。<br>
+今回は具体例を使って説明していきます。<br>
+<br>
+では具体例ですが、今回は電卓を使います。<br>
+PCで見ていると思うので電卓を起動させましょう。<br>
+<br>
+起動させたと思うので、これをMVCの３要素に分けてみます。<br>
+Model<br>
+計算を担当。<br>
+<% code("ruby") do %>
+f(disp) {
+ switch(flag)
+ {
+  case 1:disp2 = parseFloat(disp2) + parseFloat(disp); break;
+  case 2:disp2 = parseFloat(disp2) - parseFloat(disp); break;
+  case 3:disp2 = parseFloat(disp2) * parseFloat(disp); break;
+  case 4:disp2 = parseFloat(disp2) / parseFloat(disp); break;
+ }
+<% end %>
+<br>
+View<br>
+電卓・計算結果の表示を担当。<br>
+<% code("ruby") do %>
+<table>
+ <tr>
+ <td><input type="button" value="7" onClick="push(this.value)"></td>
+ <td><input type="button" value="8" onClick="push(this.value)"></td>
+ <td><input type="button" value="9" onClick="push(this.value)"></td>
+ <td><input type="button" value="/" onClick="push(this.value)"></td>
+ </tr>
+ <tr>
+ <td><input type="button" value="4" onClick="push(this.value)"></td>
+ <td><input type="button" value="5" onClick="push(this.value)"></td>
+ <td><input type="button" value="6" onClick="push(this.value)"></td>
+ <td><input type="button" value="*" onClick="push(this.value)"></td>
+ </tr>
+ <tr>
+ <td><input type="button" value="1" onClick="push(this.value)"></td>
+ <td><input type="button" value="2" onClick="push(this.value)"></td>
+ <td><input type="button" value="3" onClick="push(this.value)"></td>
+ <td><input type="button" value="-" onClick="push(this.value)"></td>
+ </tr>
+ <tr>
+ <td><input type="button" value="0" onClick="push(this.value)"></td>
+ <td><input type="button" value="." onClick="push(this.value)"></td>
+ <td><input type="button" value="C" onClick="push(this.value)"></td>
+ <td><input type="button" value="+" onClick="push(this.value)"></td>
+ </tr>
+</table>
+<% end %>
+<br>
+Contoroller<br>
+電卓では入力の引き渡しを担当。<br>
+<br>
+これぐらいの規模なら分担する必要性はありませんが、<br>
+大規模になってくると1人では時間がかかります。そのため、この方式で時間の短縮が図れます。<br>
+<br>
+と、まぁこんな感じです。詳しくはググってください。私よりも遥かに詳しいです。<br>
+では今回はここまでー。
